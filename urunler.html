@@ -12,11 +12,45 @@
             --solis-dark: #002d5b;
             --gold: #d4af37;
             --white: #ffffff;
-            --light-bg: #f8fbff;
+            --light-bg: #f0f7ff; /* Biraz daha suya yakın bir ton */
         }
 
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: 'Poppins', sans-serif; background: var(--light-bg); color: #333; line-height: 1.6; overflow-x: hidden; }
+        
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background: var(--light-bg); 
+            color: #333; 
+            line-height: 1.6; 
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* --- SAYFA KENARI DEKORASYONLARI (ARŞA ÇIKARAN DOKUNUŞLAR) --- */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 119, 190, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 119, 190, 0.05) 0%, transparent 20%);
+            z-index: -2;
+        }
+
+        /* Su Kabarcığı Efektleri */
+        .bubble {
+            position: fixed;
+            background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(0,119,190,0.1));
+            border-radius: 50%;
+            z-index: -1;
+            animation: float 15s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-50px) translateX(20px); }
+        }
 
         /* Navbar */
         nav { background: var(--white); padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
@@ -28,74 +62,86 @@
         .nav-links a:hover { color: var(--gold); }
 
         /* Ürün Listesi */
-        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; position: relative; }
         
         .product-box { 
             display: flex; 
             align-items: center; 
-            margin-bottom: 100px; 
-            gap: 50px;
-            animation: fadeInUp 0.8s ease forwards;
+            margin-bottom: 120px; 
+            gap: 60px;
+            animation: fadeInUp 1s ease forwards;
         }
 
-        /* Çapraz Yapı (Z-Pattern) */
         .product-box:nth-child(even) { flex-direction: row-reverse; }
 
-        /* Görsel Kutusu (Özel Tasarım) */
+        /* Görsel Kutusu - Floating Efekti */
         .p-image-wrapper { 
             flex: 1; 
-            background: white; 
-            padding: 30px; 
-            border-radius: 30px; 
-            box-shadow: 0 20px 40px rgba(0,119,190,0.1); 
-            border: 2px solid #eef4ff;
-            position: relative;
+            background: rgba(255, 255, 255, 0.8); 
+            backdrop-filter: blur(10px);
+            padding: 35px; 
+            border-radius: 40px; 
+            box-shadow: 0 30px 60px rgba(0,119,190,0.12); 
+            border: 1px solid rgba(255, 255, 255, 0.6);
             display: flex;
             justify-content: center;
+            position: relative;
         }
-        .p-image-wrapper img { width: 100%; max-height: 400px; object-fit: contain; transition: 0.5s; }
-        .p-image-wrapper:hover img { transform: scale(1.05); }
+        
+        .p-image-wrapper img { 
+            width: 100%; 
+            max-height: 420px; 
+            object-fit: contain; 
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+        }
+        
+        .product-box:hover .p-image-wrapper img { transform: scale(1.08) rotate(2deg); }
 
         /* Bilgi Kutusu */
-        .p-content { flex: 1.2; }
-        .p-content h2 { font-family: 'Montserrat'; font-size: 2.5rem; color: var(--solis-dark); margin-bottom: 10px; position: relative; }
-        .p-content h2::after { content: ''; position: absolute; left: 0; bottom: -5px; width: 60px; height: 4px; background: var(--gold); border-radius: 2px; }
+        .p-content { flex: 1.2; padding: 20px; }
+        .p-content h2 { font-family: 'Montserrat'; font-size: 2.8rem; color: var(--solis-dark); margin-bottom: 10px; position: relative; }
+        .p-content h2::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 80px; height: 5px; background: var(--gold); border-radius: 10px; }
         .product-box:nth-child(even) .p-content h2::after { left: auto; right: 0; }
         .product-box:nth-child(even) .p-content { text-align: right; }
 
-        .tagline { color: var(--solis-blue); font-weight: 600; font-size: 1.15rem; margin: 25px 0; display: block; }
+        .tagline { color: var(--solis-blue); font-weight: 600; font-size: 1.2rem; margin: 35px 0 20px 0; display: block; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Liste Tasarımı */
-        .feature-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        /* Özellik Listesi */
+        .feature-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
         .product-box:nth-child(even) .feature-list { justify-content: end; }
         
-        .feature-list li { display: flex; align-items: center; font-size: 0.95rem; font-weight: 500; color: #555; }
+        .feature-list li { display: flex; align-items: center; font-size: 1rem; font-weight: 500; color: #444; }
         .product-box:nth-child(even) .feature-list li { flex-direction: row-reverse; }
         
         .feature-list li::before { 
             content: "\f058"; font-family: "Font Awesome 5 Free"; font-weight: 900;
-            color: var(--gold); margin: 0 12px; font-size: 1.1rem;
+            color: var(--gold); margin: 0 15px; font-size: 1.2rem;
         }
 
         .cta-btn { 
-            display: inline-block; background: #25d366; color: white; padding: 15px 40px; 
-            border-radius: 50px; text-decoration: none; font-weight: 800; margin-top: 35px; 
-            transition: 0.3s; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+            display: inline-block; background: #25d366; color: white; padding: 18px 45px; 
+            border-radius: 100px; text-decoration: none; font-weight: 800; margin-top: 40px; 
+            transition: 0.4s; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+            text-transform: uppercase; letter-spacing: 1px;
         }
-        .cta-btn:hover { background: var(--solis-dark); color: var(--gold); transform: translateY(-3px); }
+        .cta-btn:hover { background: var(--solis-dark); color: var(--gold); transform: translateY(-5px) scale(1.05); }
 
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
 
         @media (max-width: 992px) {
-            .product-box, .product-box:nth-child(even) { flex-direction: column; text-align: center; }
-            .product-box:nth-child(even) .p-content h2::after { left: 50%; transform: translateX(-50%); }
-            .p-content h2::after { left: 50%; transform: translateX(-50%); }
-            .feature-list { grid-template-columns: 1fr; text-align: left; }
+            .product-box, .product-box:nth-child(even) { flex-direction: column; text-align: center; gap: 30px; }
+            .feature-list { grid-template-columns: 1fr; }
             .product-box:nth-child(even) .feature-list li { flex-direction: row; }
         }
     </style>
 </head>
 <body>
+
+    <div class="bubble" style="width: 80px; height: 80px; top: 15%; left: 5%;"></div>
+    <div class="bubble" style="width: 120px; height: 120px; top: 45%; right: 2%;"></div>
+    <div class="bubble" style="width: 60px; height: 60px; bottom: 10%; left: 3%;"></div>
+    <div class="bubble" style="width: 100px; height: 100px; top: 70%; left: 85%;"></div>
 
     <nav>
         <div class="nav-container">
@@ -129,7 +175,7 @@
                     <li>Suyun sertlik durumu ölçümü</li>
                     <li>Işıklı sistem</li>
                 </ul>
-                <a href="https://wa.me/905387098253" class="cta-btn"><i class="fab fa-whatsapp"></i> Bilgi Al</a>
+                <a href="https://wa.me/905387098253" class="cta-btn"><i class="fab fa-whatsapp"></i> WhatsApp Bilgi Al</a>
             </div>
         </div>
 
@@ -148,7 +194,7 @@
                     <li>Gold iyonlu filtre</li>
                     <li>Paslanmaz tank</li>
                 </ul>
-                <a href="https://wa.me/905387098253" class="cta-btn"><i class="fab fa-whatsapp"></i> Bilgi Al</a>
+                <a href="https://wa.me/905387098253" class="cta-btn"><i class="fab fa-whatsapp"></i> WhatsApp Bilgi Al</a>
             </div>
         </div>
 
@@ -164,7 +210,7 @@
                     <li>Coconut bazlı tatlandırıcı filtre</li>
                     <li>Paslanmaz musluk</li>
                 </ul>
-                <a href="https://wa.me/905387098253" class="cta-btn"><i class="fab fa-whatsapp"></i> Bilgi Al</a>
+                <a href="https://wa.me/905387098253" class="cta-btn"><i class="fab fa-whatsapp"></i> WhatsApp Bilgi Al</a>
             </div>
         </div>
 
@@ -180,7 +226,7 @@
                     <li>75 GPD Membran</li>
                     <li>Paslanmaz tank</li>
                 </ul>
-                <a href="https://wa.me/905387098253" class="cta-btn"><i class="fab fa-whatsapp"></i> Bilgi Al</a>
+                <a href="https://wa.me/905387098253" class="cta-btn"><i class="fab fa-whatsapp"></i> WhatsApp Bilgi Al</a>
             </div>
         </div>
 
@@ -196,7 +242,7 @@
                     <li>80 GPD Membran</li>
                     <li>Paslanmaz tank</li>
                 </ul>
-                <a href="https://wa.me/905387098253" class="cta-btn"><i class="fab fa-whatsapp"></i> Bilgi Al</a>
+                <a href="https://wa.me/905387098253" class="cta-btn"><i class="fab fa-whatsapp"></i> WhatsApp Bilgi Al</a>
             </div>
         </div>
 
