@@ -3,192 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solis Su Arıtma | Sağlıklı Yaşamın Altın Oranı</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <title>Solis Su Arıtma | Saf Suyun Altın Çağı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --gold: #d4af37; /* Logondaki altın sarısı */
-            --dark: #0a0a0a; /* Siyah zemin */
+            --gold: #d4af37;
+            --dark-bg: #111111;
+            --light-gray: #f4f7f6;
+            --deep-blue: #002d5b;
             --white: #ffffff;
-            --gray: #f8f8f8;
-            --transition: all 0.3s ease;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; }
-        html { scroll-behavior: smooth; }
-        body { background-color: var(--white); color: #333; line-height: 1.6; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Poppins', sans-serif; background: var(--white); color: #333; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
 
-        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-
-        /* Üst Bilgi Şeridi */
-        .top-bar { background: var(--dark); color: var(--gold); padding: 10px 0; font-size: 0.85rem; border-bottom: 1px solid #222; }
-        .top-bar .container { display: flex; justify-content: space-between; align-items: center; }
-        .top-bar .contact i { margin-right: 8px; }
-
-        /* Navigasyon - Büyük Logo Vurgusu */
-        .navbar { background: var(--white); padding: 10px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo-box { display: flex; align-items: center; text-decoration: none; }
-        .logo-box img { height: 80px; border-radius: 5px; transition: var(--transition); }
-        .logo-text { font-size: 2.2rem; font-weight: 900; color: var(--dark); letter-spacing: -1.5px; margin-left: 10px; }
+        /* HEADER & NAVIGATION */
+        header { background: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .nav-container { max-width: 1400px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; }
+        
+        .logo-area { display: flex; align-items: center; text-decoration: none; }
+        .logo-area img { height: 75px; border-radius: 8px; margin-right: 15px; }
+        .logo-text { font-size: 2.2rem; font-weight: 900; color: var(--dark-bg); letter-spacing: -1px; }
         .logo-text span { color: var(--gold); }
 
-        .nav-links { display: flex; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; margin-left: 30px; font-size: 1rem; transition: var(--transition); }
-        .nav-links a:hover { color: var(--gold); }
+        .nav-menu { display: flex; list-style: none; gap: 35px; }
+        .nav-menu a { text-decoration: none; color: var(--dark-bg); font-weight: 600; font-size: 0.95rem; transition: var(--transition); }
+        .nav-menu a:hover { color: var(--gold); }
 
-        /* Hero Alanı (Giriş) */
-        .hero { 
-            height: 75vh; 
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1542013936693-884638332954?q=80&w=1974') center/cover;
-            display: flex; align-items: center; color: white; position: relative;
+        .nav-actions .login-btn { 
+            background: var(--dark-bg); color: var(--gold); padding: 12px 28px; 
+            border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.85rem;
+            border: 2px solid var(--gold); transition: var(--transition);
         }
-        .hero-content { max-width: 700px; }
-        .hero-content h1 { font-size: 4.5rem; font-weight: 900; line-height: 1; margin: 20px 0; }
-        .hero-content h1 span { color: var(--gold); }
-        .badge { color: var(--gold); font-weight: 800; text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem; }
+        .nav-actions .login-btn:hover { background: var(--gold); color: var(--dark-bg); }
+
+        /* HERO SECTION */
+        .hero { 
+            height: 85vh; 
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%), url('https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?q=80&w=2070') center/cover;
+            display: flex; align-items: center; color: var(--white); padding: 0 5%;
+        }
+        .hero-content { max-width: 800px; }
+        .hero-content span { color: var(--gold); text-transform: uppercase; letter-spacing: 5px; font-weight: 700; font-size: 0.9rem; }
+        .hero-content h1 { font-size: 5rem; font-weight: 900; margin: 20px 0; line-height: 1; }
+        .hero-content p { font-size: 1.2rem; color: #ccc; margin-bottom: 40px; max-width: 600px; }
         
-        .btn-main { background: var(--gold); color: black; padding: 15px 40px; text-decoration: none; font-weight: 800; border-radius: 5px; display: inline-block; transition: var(--transition); text-transform: uppercase; }
-        .btn-main:hover { background: var(--white); transform: scale(1.05); }
+        .cta-btns { display: flex; gap: 20px; }
+        .btn-p { background: var(--gold); color: #000; padding: 18px 45px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: var(--transition); }
+        .btn-s { border: 2px solid var(--white); color: var(--white); padding: 16px 45px; border-radius: 5px; text-decoration: none; font-weight: 800; transition: var(--transition); }
+        .btn-p:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(212,175,55,0.3); }
 
-        /* Özellikler */
-        .features { padding: 100px 0; background: var(--white); }
-        .features .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-        .feat-card { text-align: center; padding: 40px; border: 1px solid #eee; border-radius: 20px; transition: var(--transition); }
-        .feat-card:hover { border-color: var(--gold); transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
-        .feat-card i { font-size: 4rem; color: var(--gold); margin-bottom: 25px; }
-        .feat-card h3 { font-size: 1.4rem; margin-bottom: 15px; }
+        /* STATS / FEATURES */
+        .stats-bar { padding: 80px 0; background: var(--light-gray); }
+        .stats-grid { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+        .stat-item i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
+        .stat-item h3 { font-size: 1.5rem; margin-bottom: 10px; }
+        .stat-item p { font-size: 0.9rem; color: #777; }
 
-        /* Ürünler (Admin Paneli ile dinamikleşecek kısım) */
-        .products { padding: 100px 0; background: var(--gray); }
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-size: 3rem; font-weight: 900; }
-        .gold-line { width: 100px; height: 5px; background: var(--gold); margin: 20px auto; border-radius: 10px; }
+        /* PRODUCT GRID (The "Milsu/Aquabella" Style) */
+        .products-section { padding: 120px 0; }
+        .section-header { text-align: center; margin-bottom: 80px; }
+        .section-header h2 { font-size: 3rem; font-weight: 900; margin-bottom: 15px; }
+        .divider { width: 80px; height: 5px; background: var(--gold); margin: auto; border-radius: 10px; }
+
+        .product-grid { max-width: 1300px; margin: auto; display: grid; grid-columns: 3; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; padding: 0 20px; }
+        .p-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 15px 45px rgba(0,0,0,0.05); border: 1px solid #eee; transition: var(--transition); position: relative; }
+        .p-card:hover { transform: translateY(-20px); border-color: var(--gold); }
         
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .product-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.05); transition: var(--transition); }
-        .product-card:hover { transform: scale(1.02); }
-        .product-card img { width: 100%; height: 380px; object-fit: cover; border-bottom: 3px solid var(--gold); }
-        .p-info { padding: 30px; text-align: center; }
-        .price { display: block; margin: 15px 0; font-size: 1.8rem; font-weight: 900; color: var(--gold); }
-        .p-btn { border: 2px solid var(--dark); padding: 12px 35px; text-decoration: none; color: var(--dark); font-weight: 800; border-radius: 5px; transition: var(--transition); }
-        .p-btn:hover { background: var(--dark); color: white; }
+        .p-image { position: relative; height: 400px; overflow: hidden; background: #f9f9f9; }
+        .p-image img { width: 100%; height: 100%; object-fit: contain; padding: 30px; }
+        .p-tag { position: absolute; top: 20px; right: 20px; background: var(--dark-bg); color: var(--gold); padding: 5px 15px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; }
 
-        /* Footer */
-        footer { background: var(--dark); color: white; padding: 60px 0; text-align: center; }
-        .footer-logo { height: 70px; margin-bottom: 20px; border-radius: 5px; }
+        .p-body { padding: 35px; text-align: center; }
+        .p-body h3 { font-size: 1.6rem; margin-bottom: 15px; color: var(--dark-bg); }
+        .p-specs { display: flex; justify-content: center; gap: 15px; margin-bottom: 25px; color: #888; font-size: 0.85rem; }
+        .p-price { display: block; font-size: 1.8rem; font-weight: 900; color: var(--gold); margin-bottom: 25px; }
+        .p-btn { display: inline-block; border: 2px solid var(--dark-bg); padding: 12px 35px; text-decoration: none; color: var(--dark-bg); font-weight: 800; border-radius: 5px; transition: var(--transition); }
+        .p-btn:hover { background: var(--dark-bg); color: var(--white); }
 
-        /* Sabit WhatsApp */
-        .wa-fixed { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1001; transition: var(--transition); }
-        .wa-fixed:hover { transform: scale(1.1) rotate(10deg); }
+        /* WHATSAPP FLOAT */
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1001; transition: var(--transition); }
+        .wa-float:hover { transform: scale(1.1) rotate(15deg); }
 
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.8rem; }
-            .nav-links { display: none; } /* Mobil menü sonra eklenebilir */
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 3rem; }
+            .nav-menu { display: none; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <div class="container">
-            <div class="contact">
-                <span><i class="fas fa-phone-alt"></i> +90 5XX XXX XX XX</span>
-            </div>
-            <div class="social">
-                <a href="#" style="color:var(--gold); margin-left: 15px;"><i class="fab fa-instagram"></i></a>
-                <a href="#" style="color:var(--gold); margin-left: 15px;"><i class="fab fa-facebook"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo-box">
-                <img src="img/logo.png" alt="Solis Arıtma Logo">
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-area">
+                <img src="img/logo.png" alt="Solis Logo">
                 <div class="logo-text">SOLİS <span>ARITMA</span></div>
             </a>
-            <ul class="nav-links">
-                <li><a href="#home">Ana Sayfa</a></li>
-                <li><a href="#features">Avantajlar</a></li>
-                <li><a href="#products">Ürünler</a></li>
+            <ul class="nav-menu">
+                <li><a href="#">ANA SAYFA</a></li>
+                <li><a href="#">KURUMSAL</a></li>
+                <li><a href="#">ÜRÜNLER</a></li>
+                <li><a href="#">TEKNİK SERVİS</a></li>
+                <li><a href="#">İLETİŞİM</a></li>
             </ul>
-        </div>
-    </nav>
-
-    <header class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <span class="badge">Solis Su Teknolojileri</span>
-                <h1>Sağlıklı Su, <br><span>Altın</span> Değerinde.</h1>
-                <p>Evinizdeki suyu en saf ve en lezzetli haline, uzman Solis teknolojisiyle dönüştürün.</p>
-                <div style="margin-top: 40px;">
-                    <a href="#products" class="btn-main">Kataloğu Gör</a>
-                </div>
+            <div class="nav-actions">
+                <a href="admin/index.php" class="login-btn"><i class="fas fa-user-lock"></i> ADMİN PANELİ</a>
             </div>
         </div>
     </header>
 
-    <section class="features" id="features">
-        <div class="container">
-            <div class="feat-card">
-                <i class="fas fa-tint"></i>
-                <h3>Kristal Berraklık</h3>
-                <p>8 aşamalı filtrasyon sistemiyle suyunuzun tadını ve kalitesini artırın.</p>
-            </div>
-            <div class="feat-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Tam Koruma</h3>
-                <p>Klor, kireç ve ağır metallerden arındırılmış, %100 güvenli içme suyu.</p>
-            </div>
-            <div class="feat-card">
-                <i class="fas fa-clock"></i>
-                <h3>Hızlı Servis</h3>
-                <p>İstanbul geneli aynı gün keşif ve profesyonel montaj imkanı.</p>
+    <section class="hero">
+        <div class="hero-content">
+            <span>Solis Premium Water Systems</span>
+            <h1>Sağlığı Musluğunuzdan <span>Yudumlayın</span></h1>
+            <p>Rainwater teknolojisi ve Solis kalitesiyle, evinizdeki suyu kristal berraklığında bir yaşam kaynağına dönüştürüyoruz.</p>
+            <div class="cta-btns">
+                <a href="#products" class="btn-p">HEMEN İNCELE</a>
+                <a href="#" class="btn-s">ÜCRETSİZ KEŞİF</a>
             </div>
         </div>
     </section>
 
-    <section class="products" id="products">
-        <div class="container">
-            <div class="section-title">
-                <h2>Ürün Gruplarımız</h2>
-                <div class="gold-line"></div>
+    <section class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <i class="fas fa-microscope"></i>
+                <h3>8.5 - 9.5 pH</h3>
+                <p>Alkali ve Mineral Denge</p>
             </div>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x500?text=Solis+Premium+Model" alt="Arıtma Cihazı">
-                    <div class="p-info">
-                        <h3>Solis Premium Gold</h3>
-                        <p>Alkali Filtreli + Mineral Dengeleyici</p>
-                        <span class="price">Fiyat Sorunuz</span>
-                        <a href="#" class="p-btn">Hemen İncele</a>
-                    </div>
+            <div class="stat-item">
+                <i class="fas fa-layer-group"></i>
+                <h3>12 Aşama</h3>
+                <p>Ultra Filtrasyon Sistemi</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-shield-virus"></i>
+                <h3>NSF Onaylı</h3>
+                <p>Global Güven Sertifikası</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-hand-holding-water"></i>
+                <h3>%100 Doğal</h3>
+                <p>Kaynak Suyu Lezzeti</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section" id="products">
+        <div class="section-header">
+            <h2>Öne Çıkan Modeller</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="product-grid">
+            <div class="p-card">
+                <div class="p-image">
+                    <img src="https://via.placeholder.com/400x400?text=Solis+Gold+Plus" alt="Arıtma Cihazı">
+                    <div class="p-tag">En Çok Satan</div>
                 </div>
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/400x500?text=Solis+Compact+Model" alt="Arıtma Cihazı">
-                    <div class="p-info">
-                        <h3>Solis Compact Eco</h3>
-                        <p>Tezgah Altı Yer Tasarruflu Sistem</p>
-                        <span class="price">Fiyat Sorunuz</span>
-                        <a href="#" class="p-btn">Hemen İncele</a>
+                <div class="p-body">
+                    <h3>Solis Gold Plus</h3>
+                    <div class="p-specs">
+                        <span><i class="fas fa-check"></i> Alkali</span>
+                        <span><i class="fas fa-check"></i> Pompalı</span>
+                        <span><i class="fas fa-check"></i> Detoks</span>
                     </div>
+                    <span class="p-price">Fiyat Sorunuz</span>
+                    <a href="#" class="p-btn">DETAYLARI GÖR</a>
+                </div>
+            </div>
+
+            <div class="p-card">
+                <div class="p-image">
+                    <img src="https://via.placeholder.com/400x400?text=Solis+Industrial" alt="Arıtma Cihazı">
+                    <div class="p-tag">Endüstriyel</div>
+                </div>
+                <div class="p-body">
+                    <h3>Solis Pro Master</h3>
+                    <div class="p-specs">
+                        <span><i class="fas fa-check"></i> Yüksek Kapasite</span>
+                        <span><i class="fas fa-check"></i> RO Sistem</span>
+                    </div>
+                    <span class="p-price">Fiyat Sorunuz</span>
+                    <a href="#" class="p-btn">DETAYLARI GÖR</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <img src="img/logo.png" alt="Solis" class="footer-logo">
-            <p>Solis Su Arıtma Sistemleri &copy; 2026</p>
-            <p style="font-size: 0.7rem; color: #555; margin-top: 20px;">Yusuf T. Tarafından Geliştirilmiştir.</p>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/905XXXXXXXXX" class="wa-fixed" target="_blank">
+    <a href="https://wa.me/90XXXXXXXXXX" class="wa-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
