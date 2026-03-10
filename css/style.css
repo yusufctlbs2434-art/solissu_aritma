@@ -1,0 +1,40 @@
+/* Genel Sıfırlama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f0f8ff; /* Çok açık su mavisi */
+}
+
+/* Header ve Çarpıcı Logo */
+header {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
+                url('https://images.unsplash.com/photo-1523362622744-8c1389847684?q=80&w=1600') center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.main-logo {
+    font-size: 5rem; /* Devasa ve striking logo */
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    background: rgba(0, 123, 255, 0.7);
+    padding: 10px 25px;
+    border-radius: 50px;
+}
