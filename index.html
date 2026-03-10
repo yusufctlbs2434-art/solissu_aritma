@@ -4,65 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solis Su Arıtma | Sağlıklı Yaşamın Kaynağı</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <div class="top-bar">
         <div class="container">
-            <span><i class="fas fa-phone"></i> +90 5XX XXX XX XX</span>
-            <span><i class="fas fa-envelope"></i> info@solissuaritmaonline.com</span>
+            <div class="contact-info">
+                <span><i class="fas fa-phone-alt"></i> +90 5XX XXX XX XX</span>
+                <span><i class="fas fa-envelope"></i> info@solissuaritmaonline.com</span>
+            </div>
+            <div class="social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
         </div>
     </div>
 
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">SOLİS <span>ARITMA</span></a>
+            <a href="#" class="logo-box">
+                <img src="img/logo.jpg" alt="Solis Logo">
+                <span class="logo-text">SOLİS <span>ARITMA</span></span>
+            </a>
             <ul class="nav-links">
-                <li><a href="#">Ana Sayfa</a></li>
-                <li><a href="#kurumsal">Kurumsal</a></li>
-                <li><a href="#urunler">Ürünler</a></li>
-                <li><a href="#iletisim">İletişim</a></li>
+                <li><a href="#home">Ana Sayfa</a></li>
+                <li><a href="#features">Neden Biz?</a></li>
+                <li><a href="#products">Ürünler</a></li>
+                <li><a href="#contact">İletişim</a></li>
             </ul>
+            <div class="nav-buttons">
+                <a href="https://wa.me/905XXXXXXXXX" class="nav-wa-btn"><i class="fab fa-whatsapp"></i> Destek Hattı</a>
+            </div>
         </div>
     </nav>
 
-    <section class="hero-v2">
-        <div class="hero-content">
-            <span class="badge">Solis Su Teknolojileri</span>
-            <h1>Yaşam Kalitenizi Artıran Saf Su Çözümleri</h1>
-            <p>Milsu ve Aquabella kalitesini kendi teknolojimizle birleştiriyoruz. Evsel ve endüstriyel arıtma sistemlerinde profesyonel destek.</p>
-            <div class="hero-btns">
-                <a href="#urunler" class="btn-main">Ürünleri İncele</a>
-                <a href="https://wa.me/numaraniz" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Destek Al</a>
+    <header class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge-gold">Saf Suyun En Şık Hali</span>
+                <h1>Sağlıklı Gelecek <span>Solis</span> İle Başlar</h1>
+                <p>Eviniz ve iş yeriniz için uluslararası sertifikalı, yüksek teknolojili su arıtma çözümleri.</p>
+                <div class="hero-actions">
+                    <a href="#products" class="btn-main">Kataloğu İncele</a>
+                    <a href="#contact" class="btn-outline">Ücretsiz Keşif İste</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="feature-card">
+                <i class="fas fa-filter"></i>
+                <h3>8 Aşamalı Filtre</h3>
+                <p>Mineral dengesi korunmuş, alkali ve sağlıklı içme suyu.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-certificate"></i>
+                <h3>NSF Onaylı</h3>
+                <p>Dünya sağlık standartlarına uygun parça ve filtreler.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-tools"></i>
+                <h3>Hızlı Montaj</h3>
+                <p>Aynı gün kurulum ve 7/24 teknik servis garantisi.</p>
             </div>
         </div>
     </section>
 
-    <section id="urunler" class="products-section">
+    <section class="products" id="products">
         <div class="container">
             <div class="section-title">
-                <h2>Öne Çıkan Ürünlerimiz</h2>
-                <div class="line"></div>
+                <h2>Öne Çıkan Sistemlerimiz</h2>
+                <div class="gold-line"></div>
             </div>
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="badge-sale">En Çok Satan</div>
-                    <img src="https://via.placeholder.com/300x300?text=Solis+Evsel+Cihaz" alt="Su Arıtma">
-                    <h3>Solis Eco Plus - 5 Aşamalı</h3>
-                    <div class="price">4.250 TL</div>
-                    <a href="#" class="view-btn">Detayları Gör</a>
+                    <div class="p-img">
+                        <img src="https://via.placeholder.com/400x450?text=Solis+Gold+Series" alt="Ürün">
+                        <div class="p-tag">Popüler</div>
+                    </div>
+                    <div class="p-details">
+                        <h3>Solis Gold Series</h3>
+                        <p>Tezgah altı, 12 Litre çelik tanklı sistem.</p>
+                        <span class="price">Fiyat Sorunuz</span>
+                        <a href="#" class="p-btn">İncele</a>
+                    </div>
                 </div>
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300x300?text=Endüstriyel+Cihaz" alt="Su Arıtma">
-                    <h3>Solis Pro Industrial</h3>
-                    <div class="price">Fiyat Sorunuz</div>
-                    <a href="#" class="view-btn">Detayları Gör</a>
+                    <div class="p-img">
+                        <img src="https://via.placeholder.com/400x450?text=Solis+Endustriyel" alt="Ürün">
+                        <div class="p-tag">Kurumsal</div>
+                    </div>
+                    <div class="p-details">
+                        <h3>Solis Pro Industrial</h3>
+                        <p>Yüksek kapasiteli, fabrikalar için özel üretim.</p>
+                        <span class="price">Fiyat Sorunuz</span>
+                        <a href="#" class="p-btn">İncele</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="img/logo.jpg" alt="Solis" class="f-logo">
+                    <p>Madenler Uzay Çelik Sistemleri güvencesiyle suyunuzu altına dönüştürüyoruz.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Kurumsal</h4>
+                    <a href="#">Hakkımızda</a>
+                    <a href="#">Sertifikalar</a>
+                    <a href="#">Kullanım Kılavuzları</a>
+                </div>
+                <div class="footer-contact" id="contact">
+                    <h4>İletişim</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
+                    <p><i class="fas fa-phone"></i> +90 5XX XXX XX XX</p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Solis Su Arıtma | Yusuf T. Tasarımıdır.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/905XXXXXXXXX" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
