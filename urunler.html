@@ -3,41 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ürünlerimiz | Solis Gold Premium Serisi</title>
+    <title>Ürünler | Solis Gold Premium Akıllı Seri</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --blue: #0077be; --dark: #002d5b; --gold: #d4af37; --white: #ffffff; }
-        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; }
-        body { background: #f0f5fa; color: #333; }
+        :root { --solis-blue: #0077be; --solis-dark: #002d5b; --gold: #d4af37; --white: #ffffff; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Poppins', sans-serif; background: #f0f5fa; color: #333; }
 
         /* Navbar */
         nav { background: var(--white); padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .nav-container { max-width: 1300px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
+        .nav-container { max-width: 1400px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
         .logo-box { display: flex; align-items: center; text-decoration: none; }
-        .logo-box img { height: 70px; margin-right: 15px; }
-        .logo-text { font-family: 'Montserrat'; font-size: 1.8rem; font-weight: 900; color: var(--dark); }
+        .logo-box img { height: 75px; margin-right: 15px; }
+        .logo-text { font-family: 'Montserrat'; font-size: 2rem; font-weight: 900; color: var(--solis-dark); }
+        
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--solis-dark); font-weight: 700; }
+        .nav-links a:hover { color: var(--gold); }
 
-        /* Ürün Kutu Yapısı */
-        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        /* Ürün Kartları */
+        .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
         .product-box { 
             background: white; border-radius: 25px; margin-bottom: 40px; display: flex; flex-wrap: wrap; 
-            overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #e1e8ef;
+            overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid #e1e8ef;
         }
-        .p-image { flex: 1; min-width: 320px; background: #fff; padding: 40px; display: flex; align-items: center; justify-content: center; }
-        .p-image img { width: 100%; max-height: 400px; object-fit: contain; }
+        .p-image { flex: 1; min-width: 350px; padding: 40px; display: flex; align-items: center; justify-content: center; background: #fff; }
+        .p-image img { width: 100%; max-height: 450px; object-fit: contain; }
 
-        .p-details { flex: 1.2; padding: 40px; min-width: 320px; }
-        .p-details h2 { font-family: 'Montserrat'; color: var(--dark); margin-bottom: 20px; }
+        .p-details { flex: 1.2; padding: 50px; min-width: 350px; }
+        .p-details h2 { font-family: 'Montserrat'; font-size: 2.2rem; color: var(--solis-dark); margin-bottom: 25px; }
 
-        /* 10 Maddelik Akıllı Özellikler */
-        .feature-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .feature-list li { display: flex; align-items: center; font-size: 0.9rem; color: #555; }
-        .feature-list li::before { 
-            content: "•"; color: var(--gold); font-size: 2rem; margin-right: 10px; line-height: 0;
-        }
+        /* Akıllı Özellikler */
+        .feature-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .feature-list li { display: flex; align-items: center; font-size: 0.95rem; font-weight: 500; color: #444; }
+        .feature-list li::before { content: "•"; color: var(--gold); font-size: 2.5rem; margin-right: 12px; line-height: 0; }
 
-        .order-btn { display: inline-block; background: #25d366; color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; margin-top: 30px; }
+        .btn-order { display: inline-block; background: #25d366; color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 800; margin-top: 30px; transition: 0.3s; }
+        .btn-order:hover { background: var(--solis-dark); color: var(--gold); }
     </style>
 </head>
 <body>
@@ -47,16 +50,16 @@
                 <img src="img/logo.png" alt="Solis Logo">
                 <div class="logo-text">SOLİS <span style="color:var(--gold)">ARITMA</span></div>
             </a>
-            <ul style="display:flex; list-style:none; gap:25px;">
-                <li><a href="index.html" style="text-decoration:none; color:var(--dark); font-weight:700;">ANASAYFA</a></li>
-                <li><a href="urunler.html" style="text-decoration:none; color:var(--gold); font-weight:700;">ÜRÜNLER</a></li>
+            <ul class="nav-links">
+                <li><a href="index.html">ANASAYFA</a></li>
+                <li><a href="urunler.html" style="color:var(--gold)">ÜRÜNLER</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
         <div class="product-box">
-            <div class="p-image"><img src="img/urun-gold-premium.png"></div>
+            <div class="p-image"><img src="img/urun-gold-premium.png" alt="Solis Gold Premium 1"></div>
             <div class="p-details">
                 <h2>Solis Gold Premium 1</h2>
                 <ul class="feature-list">
@@ -71,12 +74,12 @@
                     <li>Suyun sertlik durumu ölçümü</li>
                     <li>Işıklı sistem</li>
                 </ul>
-                <a href="https://wa.me/905387098253" class="order-btn"><i class="fab fa-whatsapp"></i> Hemen Bilgi Al</a>
+                <a href="https://wa.me/905387098253" class="btn-order"><i class="fab fa-whatsapp"></i> WhatsApp'tan Bilgi Al</a>
             </div>
         </div>
-        
+
         <div class="product-box">
-            <div class="p-image"><img src="img/urun-gold-premium2.png"></div>
+            <div class="p-image"><img src="img/urun-gold-premium2.png" alt="Solis Gold Premium 2"></div>
             <div class="p-details">
                 <h2>Solis Gold Premium 2</h2>
                 <ul class="feature-list">
@@ -91,9 +94,9 @@
                     <li>Suyun sertlik durumu ölçümü</li>
                     <li>Işıklı sistem</li>
                 </ul>
-                <a href="https://wa.me/905387098253" class="order-btn"><i class="fab fa-whatsapp"></i> Hemen Bilgi Al</a>
+                <a href="https://wa.me/905387098253" class="btn-order"><i class="fab fa-whatsapp"></i> WhatsApp'tan Bilgi Al</a>
             </div>
         </div>
-        </div>
+    </div>
 </body>
 </html>
