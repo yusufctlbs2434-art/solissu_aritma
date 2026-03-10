@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ürünler | Solis Gold Premium Akıllı Seri</title>
+    <title>Ürünlerimiz | Solis Su Arıtma Sistemleri</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --solis-blue: #0077be; --solis-dark: #002d5b; --gold: #d4af37; --white: #ffffff; }
+        :root {
+            --solis-blue: #0077be;
+            --solis-dark: #002d5b;
+            --gold: #d4af37;
+            --white: #ffffff;
+            --bg: #f0f5fa;
+        }
+
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: 'Poppins', sans-serif; background: #f0f5fa; color: #333; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg); color: #333; line-height: 1.6; }
 
         /* Navbar */
         nav { background: var(--white); padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
@@ -19,31 +26,65 @@
         .logo-text { font-family: 'Montserrat'; font-size: 2rem; font-weight: 900; color: var(--solis-dark); }
         
         .nav-links { display: flex; list-style: none; gap: 30px; }
-        .nav-links a { text-decoration: none; color: var(--solis-dark); font-weight: 700; }
+        .nav-links a { text-decoration: none; color: var(--solis-dark); font-weight: 700; transition: 0.3s; }
         .nav-links a:hover { color: var(--gold); }
 
-        /* Ürün Kartları */
+        /* Ürün Listesi Konteynırı */
         .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+        
         .product-box { 
-            background: white; border-radius: 25px; margin-bottom: 40px; display: flex; flex-wrap: wrap; 
-            overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid #e1e8ef;
+            background: white; 
+            border-radius: 25px; 
+            margin-bottom: 50px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            overflow: hidden; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            border: 1px solid #e1e8ef;
+            transition: 0.3s ease;
         }
+        .product-box:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+
         .p-image { flex: 1; min-width: 350px; padding: 40px; display: flex; align-items: center; justify-content: center; background: #fff; }
         .p-image img { width: 100%; max-height: 450px; object-fit: contain; }
 
         .p-details { flex: 1.2; padding: 50px; min-width: 350px; }
-        .p-details h2 { font-family: 'Montserrat'; font-size: 2.2rem; color: var(--solis-dark); margin-bottom: 25px; }
+        .p-details h2 { font-family: 'Montserrat'; font-size: 2.2rem; color: var(--solis-dark); margin-bottom: 10px; }
+        .p-tagline { color: var(--solis-blue); font-weight: 600; font-size: 1.1rem; margin-bottom: 25px; font-style: italic; }
 
-        /* Akıllı Özellikler */
+        /* Özellik Listesi */
         .feature-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
         .feature-list li { display: flex; align-items: center; font-size: 0.95rem; font-weight: 500; color: #444; }
-        .feature-list li::before { content: "•"; color: var(--gold); font-size: 2.5rem; margin-right: 12px; line-height: 0; }
+        .feature-list li::before { 
+            content: "•"; 
+            color: var(--gold); 
+            font-size: 2.5rem; 
+            margin-right: 12px; 
+            line-height: 0; 
+        }
 
-        .btn-order { display: inline-block; background: #25d366; color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 800; margin-top: 30px; transition: 0.3s; }
-        .btn-order:hover { background: var(--solis-dark); color: var(--gold); }
+        .btn-order { 
+            display: inline-block; 
+            background: #25d366; 
+            color: white; 
+            padding: 15px 40px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 800; 
+            margin-top: 35px; 
+            transition: 0.3s; 
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .btn-order:hover { background: var(--solis-dark); color: var(--gold); transform: scale(1.05); }
+
+        @media (max-width: 768px) {
+            .feature-list { grid-template-columns: 1fr; }
+            .p-details { padding: 30px; }
+        }
     </style>
 </head>
 <body>
+
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo-box">
@@ -58,10 +99,12 @@
     </nav>
 
     <div class="container">
+        
         <div class="product-box">
-            <div class="p-image"><img src="img/urun-gold-premium.png" alt="Solis Gold Premium 1"></div>
+            <div class="p-image"><img src="img/urun-gold-premium.png" alt="Solis Gold Premium"></div>
             <div class="p-details">
-                <h2>Solis Gold Premium 1</h2>
+                <h2>Solis Gold Premium</h2>
+                <p class="p-tagline">Akıllı Teknolojinin Suyla Buluştuğu Nokta</p>
                 <ul class="feature-list">
                     <li>Kaçak su sensörü</li>
                     <li>Filtre kirlilik oranı göstergesi</li>
@@ -74,29 +117,46 @@
                     <li>Suyun sertlik durumu ölçümü</li>
                     <li>Işıklı sistem</li>
                 </ul>
-                <a href="https://wa.me/905387098253" class="btn-order"><i class="fab fa-whatsapp"></i> WhatsApp'tan Bilgi Al</a>
+                <a href="https://wa.me/905387098253" class="btn-order"><i class="fab fa-whatsapp"></i> Bilgi Al</a>
             </div>
         </div>
 
         <div class="product-box">
-            <div class="p-image"><img src="img/urun-gold-premium2.png" alt="Solis Gold Premium 2"></div>
+            <div class="p-image"><img src="img/urun-gold-premium5.png" alt="Solis Vitali Slim"></div>
             <div class="p-details">
-                <h2>Solis Gold Premium 2</h2>
+                <h2>Solis Vitali Slim</h2>
+                <p class="p-tagline">Solis Vitali Slim ile suyunuzu kişiselleştirin</p>
                 <ul class="feature-list">
-                    <li>Kaçak su sensörü</li>
-                    <li>Filtre kirlilik oranı göstergesi</li>
-                    <li>Şebeke basınç durumu göstergesi</li>
-                    <li>Tank doluluk oranı derecesi göstergesi</li>
-                    <li>Silver pompa</li>
-                    <li>Android işletim sistemi kontrolü</li>
-                    <li>Yapay Zeka destekli</li>
-                    <li>Sızıntı sensörü ve sesli alarm</li>
-                    <li>Suyun sertlik durumu ölçümü</li>
-                    <li>Işıklı sistem</li>
+                    <li>Full cam tasarım</li>
+                    <li>Post karbonlu filtre</li>
+                    <li>Kişiye özel fotoğraf baskısı seçeneği</li>
+                    <li>Tezgah üstü opsiyon</li>
+                    <li>Çift coconut bazlı tatlandırıcı filtre</li>
+                    <li>80GPD Membran</li>
+                    <li>Gold iyonlu filtre</li>
+                    <li>Paslanmaz tank</li>
                 </ul>
-                <a href="https://wa.me/905387098253" class="btn-order"><i class="fab fa-whatsapp"></i> WhatsApp'tan Bilgi Al</a>
+                <a href="https://wa.me/905387098253" class="btn-order"><i class="fab fa-whatsapp"></i> Bilgi Al</a>
             </div>
         </div>
+
+        <div class="product-box">
+            <div class="p-image"><img src="img/urun-gold-premium4.png" alt="Solis Elitro"></div>
+            <div class="p-details">
+                <h2>Solis Elitro</h2>
+                <p class="p-tagline">Su arıtmanın en estetik ve güvenilir yolu Solis Elitro ile tanışın</p>
+                <ul class="feature-list">
+                    <li>Block karbonlu filtre</li>
+                    <li>5 Micron sediment filtre</li>
+                    <li>Gümüş iyonlu filtre</li>
+                    <li>Coconut bazlı tatlandırıcı filtre</li>
+                    <li>Paslanmaz musluk</li>
+                </ul>
+                <a href="https://wa.me/905387098253" class="btn-order"><i class="fab fa-whatsapp"></i> Bilgi Al</a>
+            </div>
+        </div>
+
     </div>
+
 </body>
 </html>
