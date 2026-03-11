@@ -11,7 +11,7 @@
         * { margin:0; padding:0; box-sizing:border-box; scroll-behavior: smooth; }
         body { font-family: 'Poppins', sans-serif; background: #ffffff; color: #333; line-height: 1.6; }
 
-        /* --- TOP BILLBOARD BAR (81 İL HAREKETLİ YAZI) --- */
+        /* --- TOP BILLBOARD BAR --- */
         .top-bar {
             background: var(--solis-dark);
             color: var(--white);
@@ -37,14 +37,32 @@
         /* Navbar */
         nav { background: var(--white); padding: 10px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .nav-container { max-width: 1400px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
+        
+        /* --- YENİ LOGO VE YAZI YAPISI --- */
         .logo-box { display: flex; align-items: center; text-decoration: none; }
-        .logo-box img { height: 65px; margin-right: 15px; }
-        .logo-text { font-family: 'Montserrat'; font-size: 1.8rem; font-weight: 900; color: var(--solis-dark); }
+        .logo-box img { 
+            height: 55px; /* Yatay geniş yapı için yüksekliği optimize ettik */
+            width: auto;
+            margin-right: 18px; 
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        .logo-text { 
+            font-family: 'Montserrat'; 
+            font-size: 1.7rem; 
+            font-weight: 900; 
+            color: var(--solis-dark); 
+            letter-spacing: 1px;
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+        .logo-text span { color: var(--gold); font-size: 1.6rem; }
+
         .nav-links { display: flex; list-style: none; gap: 30px; }
         .nav-links a { text-decoration: none; color: var(--solis-dark); font-weight: 700; transition: 0.3s; font-size: 0.9rem; }
         .nav-links a:hover, .nav-links a.active { color: var(--gold); }
 
-        /* Hero (Şimdilik dokunulmadı, son aşamada revize edilecek) */
+        /* Hero */
         .hero { 
             height: 70vh; 
             background: linear-gradient(rgba(0,45,91,0.6), rgba(0,45,91,0.6)), url('img/banner.png') center/cover no-repeat;
@@ -52,10 +70,9 @@
         }
         .hero-content img { max-width: 450px; margin-bottom: 20px; }
         
-        /* Vizyon & Misyon Alanı (Premium Style) */
+        /* Vizyon & Misyon */
         .section { padding: 100px 0; }
         .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-        
         .vm-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         .vm-card { 
             background: #f8fbff; 
@@ -65,15 +82,12 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.03);
             transition: 0.3s;
         }
-        .vm-card:hover { transform: translateY(-10px); background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
         .vm-card h2 { font-family: 'Montserrat'; color: var(--solis-dark); margin-bottom: 20px; font-size: 2rem; }
         .vm-card p { color: #555; font-size: 1rem; text-align: justify; }
 
-        /* Info Cards */
         .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px; }
         .card { background: white; padding: 40px; border-radius: 15px; text-align: center; border: 1px solid #eee; }
         .card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
-        .card h3 { margin-bottom: 15px; color: var(--solis-dark); }
 
         /* Contact Section */
         #contact { background: var(--solis-dark); color: white; text-align: center; }
@@ -82,11 +96,9 @@
         .btn-insta { background: #E1306C; }
         .btn-mail { background: var(--solis-blue); }
         .btn-wp { background: #25d366; }
-        .c-btn:hover { opacity: 0.8; transform: scale(1.05); }
 
         /* Floating */
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: 0.3s; }
-        .wa-float:hover { transform: scale(1.1); }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
 
         @media (max-width: 768px) { .vm-container { grid-template-columns: 1fr; } }
     </style>
@@ -97,7 +109,7 @@
         <div class="marquee">
             <span><i class="fas fa-truck"></i> 81 İlde Ücretsiz Kurulum & Teknik Servis</span>
             <span><i class="fas fa-calendar-check"></i> 14 Gün Koşulsuz İade & Deneme Süresi</span>
-            <span><i class="fas fa-credit-card"></i> Taksit İmkanı</span>
+            <span><i class="fas fa-credit-card"></i> Kredi Kartına 9 Taksit İmkanı</span>
             <span><i class="fas fa-shield-alt"></i> 2 Yıl Full Garanti & NSF Onaylı Filtreler</span>
             <span><i class="fas fa-truck"></i> 81 İlde Ücretsiz Kurulum & Teknik Servis</span>
             <span><i class="fas fa-calendar-check"></i> 14 Gün Koşulsuz İade & Deneme Süresi</span>
@@ -108,7 +120,9 @@
         <div class="nav-container">
             <a href="index.html" class="logo-box">
                 <img src="img/logo.png" alt="Solis Logo">
-                <div class="logo-text">SOLİS <span style="color:var(--gold)">ARITMA</span></div>
+                <div class="logo-text">
+                    SOLİS <span>SU ARITMA</span>
+                </div>
             </a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">ANASAYFA</a></li>
@@ -134,11 +148,11 @@
             <div class="vm-container">
                 <div class="vm-card">
                     <h2>Vizyonumuz</h2>
-                    <p>Solis Su Arıtma Sistemleri olarak; suyun sadece bir ihtiyaç değil, yaşamın en değerli kaynağı olduğunun bilincindeyiz. Teknolojinin sınırlarını zorlayarak, dünyadaki her eve ve işletmeye en saf, en sağlıklı ve en ekonomik suyu ulaştıran küresel bir marka olmayı hedefliyoruz. Sürdürülebilir çevre politikalarımızla, gelecek nesillere daha temiz bir dünya bırakmak vizyonumuzun temel taşını oluşturmaktadır.</p>
+                    <p>Solis Su Arıtma Sistemleri olarak; suyun sadece bir ihtiyaç değil, yaşamın en değerli kaynağı olduğunun bilincindeyiz. Teknolojinin sınırlarını zorlayarak, dünyadaki her eve ve işletmeye en saf, en sağlıklı ve en ekonomik suyu ulaştıran küresel bir marka olmayı hedefliyoruz.</p>
                 </div>
                 <div class="vm-card">
                     <h2>Misyonumuz</h2>
-                    <p>İleri mühendislik çözümlerini ve yüksek standartlı filtrasyon teknolojilerini kullanarak, şebeke suyunu ideal içme suyu formuna dönüştürmek ana görevimizdir. Solis unvanı altında, koşulsuz müşteri memnuniyeti ilkesiyle hareket ederek; hızlı teknik servis, 81 ilde kurulum desteği ve güvenilir satış sonrası hizmetlerimizle toplumun sağlıklı suya erişim hakkını güvence altına alıyoruz.</p>
+                    <p>İleri mühendislik çözümlerini ve yüksek standartlı filtrasyon teknolojilerini kullanarak, şebeke suyunu ideal içme suyu formuna dönüştürmek ana görevimizdir. Solis unvanı altında, koşulsuz müşteri memnuniyeti ilkesiyle hareket ediyoruz.</p>
                 </div>
             </div>
 
