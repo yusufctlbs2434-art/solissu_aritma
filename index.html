@@ -29,33 +29,87 @@
         .nav-links a { text-decoration: none; color: var(--solis-dark); font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--gold); }
 
+        /* --- YENİ HERO BÖLÜMÜ --- */
+        .hero {
+            position: relative;
+            height: 85vh; /* Ekranın çoğunu kaplasın */
+            background: linear-gradient(135deg, rgba(0,45,91,0.9) 0%, rgba(0,119,190,0.7) 100%), url('img/banner.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            color: var(--white);
+        }
+        .hero-container {
+            max-width: 1400px;
+            margin: auto;
+            padding: 0 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+        }
+        .hero-text h1 {
+            font-family: 'Montserrat';
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .hero-text h1 span { color: var(--gold); }
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 500px;
+        }
+        .hero-image img {
+            max-width: 100%;
+            filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .hero-btn {
+            background: var(--gold);
+            color: var(--solis-dark);
+            padding: 20px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(212,175,55,0.3);
+        }
+        .hero-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(212,175,55,0.5);
+        }
+
         /* Sections */
         .section { padding: 100px 0; }
         .container { max-width: 1200px; margin: auto; padding: 0 20px; }
         
-        /* Vizyon Misyon - Premium Grid */
+        /* Vizyon Misyon */
         .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 80px; }
         .vm-box { background: var(--light-bg); padding: 50px; border-radius: 20px; border-bottom: 4px solid var(--solis-blue); transition: 0.3s; }
         .vm-box:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .vm-box h2 { font-family: 'Montserrat'; color: var(--solis-dark); margin-bottom: 20px; font-size: 1.8rem; }
 
-        /* --- SSS (YENİ TASARIM) --- */
+        /* SSS */
         .faq-header { text-align: center; margin-bottom: 60px; }
         .faq-header h2 { font-family: 'Montserrat'; font-size: 2.8rem; color: var(--solis-dark); position: relative; display: inline-block; }
         .faq-header h2::after { content: ''; width: 80px; height: 4px; background: var(--gold); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
 
         .faq-row { display: flex; align-items: center; gap: 50px; margin-bottom: 40px; background: #fff; padding: 30px; border-radius: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); border: 1px solid #f0f0f0; }
         .faq-row.reverse { flex-direction: row-reverse; }
-        
         .faq-img-box { flex: 1; text-align: center; }
         .faq-img-box img { max-width: 100%; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,119,190,0.15); border: 5px solid #fff; }
-        
         .faq-text-box { flex: 1.5; }
-        .faq-text-box h3 { color: var(--solis-dark); font-family: 'Montserrat'; font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .faq-text-box h3 i { color: var(--gold); font-size: 1.2rem; }
-        .faq-text-box p { color: #555; font-size: 1.05rem; }
 
-        /* Footer / Contact */
+        /* Footer */
         #contact { background: var(--solis-dark); color: white; text-align: center; padding: 80px 0; }
         .contact-btns { display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
         .c-btn { padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; color: white; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
@@ -64,6 +118,9 @@
         .btn-mail { background: var(--solis-blue); }
 
         @media (max-width: 992px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; padding: 50px 20px; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-text p { margin: 20px auto; }
             .faq-row, .faq-row.reverse { flex-direction: column; text-align: center; }
             .vm-grid { grid-template-columns: 1fr; }
         }
@@ -95,6 +152,19 @@
         </div>
     </nav>
 
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Musluğunuzdan <span>Sağlık</span> Aksın</h1>
+                <p>Yeni nesil Solis teknolojisi ile tanışın. Suyun en saf halini en teknolojik cihazlarla mutfağınıza taşıyoruz.</p>
+                <a href="urunler.html" class="hero-btn">ÜRÜNLERİ İNCELE <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-image">
+                <img src="img/slogan.png" alt="Solis Arıtma Cihazı">
+            </div>
+        </div>
+    </section>
+
     <section class="section" id="about">
         <div class="container">
             <div class="vm-grid">
@@ -118,41 +188,9 @@
                 </div>
                 <div class="faq-text-box">
                     <h3><i class="fas fa-cogs"></i> Cihazlarımız nasıl çalışıyor?</h3>
-                    <p>Solis su arıtma cihazları, yüksek performanslı ters osmoz teknolojisi ile çalışır. Musluk suyundaki klor, kireç, ağır metaller ve bakterileri moleküler düzeyde arındırırken, suyun içeriğindeki doğal mineralleri korur. 5 aşamalı filtreleme sürecimizle suyunuz her daim taze ve içilebilir kalır.</p>
+                    <p>Solis su arıtma cihazları, yüksek performanslı ters osmoz teknolojisi ile çalışır. Musluk suyundaki klor, kireç, ağır metaller ve bakterileri moleküler düzeyde arındırırken, suyun içeriğindeki doğal mineralleri korur.</p>
                 </div>
             </div>
-
-            <div class="faq-row reverse">
-                <div class="faq-img-box">
-                    <img src="img/slider.png" alt="Filtre Değişimi">
-                </div>
-                <div class="faq-text-box">
-                    <h3><i class="fas fa-sync-alt"></i> Filtre değişimi ne sıklıkla yapılmalı?</h3>
-                    <p>Filtre ömürleri kullanım yoğunluğuna ve su kalitesine göre 6-12 ay arasında değişmektedir. Solis teknik ekibi olarak, cihazınızın verimliliğini korumak adına değişim zamanlarını sizin yerinize takip ediyor ve profesyonel bakım takvimi sunuyoruz.</p>
-                </div>
-            </div>
-
-            <div class="faq-row">
-                <div class="faq-img-box">
-                    <img src="img/slider2.png" alt="Kurulum Süreci">
-                </div>
-                <div class="faq-text-box">
-                    <h3><i class="fas fa-tools"></i> Kurulum süreci nasıl ilerliyor?</h3>
-                    <p>Kurulum tamamen ücretsizdir. Satın alma sonrası ekiplerimiz randevu için sizinle iletişime geçer. Uzman teknisyenlerimiz mutfağınıza en uygun montajı 15-30 dakika içinde tamamlar. İşlem sonunda cihaz kullanımı ve filtre takip süreci hakkında detaylı eğitim verilmektedir.</p>
-                </div>
-            </div>
-
-            <div class="vm-grid" style="margin-top: 40px;">
-                <div class="vm-box" style="padding: 30px;">
-                    <h3><i class="fas fa-heartbeat" style="color:var(--gold)"></i> Arıtılmış su sağlıklı mı?</h3>
-                    <p>Evet. Cihazlarımız tüm zararlı mikroorganizmaları elerken suyun pH dengesini ve mineral yapısını optimize eder. Sağlıklı bir yaşam için gereken en saf suyu musluğunuza taşır.</p>
-                </div>
-                <div class="vm-box" style="padding: 30px;">
-                    <h3><i class="fas fa-shield-check" style="color:var(--gold)"></i> Garanti kapsamı nedir?</h3>
-                    <p>Solis güvencesiyle tüm cihazlarımız 2 yıl tam garanti altındadır. Herhangi bir teknik aksaklıkta 81 ildeki geniş servis ağımızla yanınızdayız.</p>
-                </div>
-            </div>
-
         </div>
     </section>
 
