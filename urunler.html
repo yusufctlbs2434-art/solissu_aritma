@@ -12,136 +12,116 @@
             --solis-dark: #002d5b;
             --gold: #d4af37;
             --white: #ffffff;
-            --light-bg: #f0f7ff; /* Biraz daha suya yakın bir ton */
+            --bg: #ffffff;
         }
 
         * { margin:0; padding:0; box-sizing:border-box; }
-        
         body { 
             font-family: 'Poppins', sans-serif; 
-            background: var(--light-bg); 
+            background: var(--bg); 
             color: #333; 
-            line-height: 1.6; 
             overflow-x: hidden;
             position: relative;
         }
 
-        /* --- SAYFA KENARI DEKORASYONLARI (ARŞA ÇIKARAN DOKUNUŞLAR) --- */
-        body::before {
-            content: "";
+        /* --- YAN DEKORASYONLAR (DURAĞAN VE PREMİUM) --- */
+        .side-decoration {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 119, 190, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(0, 119, 190, 0.05) 0%, transparent 20%);
-            z-index: -2;
-        }
-
-        /* Su Kabarcığı Efektleri */
-        .bubble {
-            position: fixed;
-            background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(0,119,190,0.1));
-            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15vw; /* Ekranın %15'ini kaplar, içeriğe girmez */
+            height: 80vh;
+            opacity: 0.15;
             z-index: -1;
-            animation: float 15s infinite ease-in-out;
             pointer-events: none;
+            background-repeat: no-repeat;
+            background-size: contain;
         }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) translateX(0); }
-            50% { transform: translateY(-50px) translateX(20px); }
+        .side-left { 
+            left: 20px; 
+            background-image: url('https://www.transparentpng.com/download/water-drop/blue-water-drops-transparent-background-3.png'); 
+        }
+        .side-right { 
+            right: 20px; 
+            background-image: url('https://www.transparentpng.com/download/water-drop/blue-water-drops-transparent-background-3.png'); 
         }
 
         /* Navbar */
-        nav { background: var(--white); padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-        .nav-container { max-width: 1400px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
+        nav { background: var(--white); padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee; }
+        .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
         .logo-box { display: flex; align-items: center; text-decoration: none; }
-        .logo-box img { height: 75px; margin-right: 15px; }
-        .logo-text { font-family: 'Montserrat'; font-size: 2rem; font-weight: 900; color: var(--solis-dark); }
-        .nav-links a { text-decoration: none; color: var(--solis-dark); font-weight: 700; margin-left: 25px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--gold); }
+        .logo-box img { height: 60px; margin-right: 12px; }
+        .logo-text { font-family: 'Montserrat'; font-size: 1.6rem; font-weight: 900; color: var(--solis-dark); }
+        .nav-links a { text-decoration: none; color: var(--solis-dark); font-weight: 700; margin-left: 25px; font-size: 0.9rem; }
 
         /* Ürün Listesi */
-        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; position: relative; }
+        .container { max-width: 1100px; margin: 80px auto; padding: 0 20px; }
         
         .product-box { 
             display: flex; 
             align-items: center; 
-            margin-bottom: 120px; 
-            gap: 60px;
-            animation: fadeInUp 1s ease forwards;
+            margin-bottom: 150px; 
+            gap: 80px;
         }
 
         .product-box:nth-child(even) { flex-direction: row-reverse; }
 
-        /* Görsel Kutusu - Floating Efekti */
+        /* Görsel Kutusu (Sade ve Şık) */
         .p-image-wrapper { 
             flex: 1; 
-            background: rgba(255, 255, 255, 0.8); 
-            backdrop-filter: blur(10px);
-            padding: 35px; 
-            border-radius: 40px; 
-            box-shadow: 0 30px 60px rgba(0,119,190,0.12); 
-            border: 1px solid rgba(255, 255, 255, 0.6);
             display: flex;
             justify-content: center;
-            position: relative;
+            padding: 20px;
         }
-        
         .p-image-wrapper img { 
             width: 100%; 
-            max-height: 420px; 
+            max-width: 380px; 
             object-fit: contain; 
-            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+            /* Sadece çok hafif bir gölge, animasyonlar kaldırıldı */
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.08));
         }
-        
-        .product-box:hover .p-image-wrapper img { transform: scale(1.08) rotate(2deg); }
 
-        /* Bilgi Kutusu */
-        .p-content { flex: 1.2; padding: 20px; }
-        .p-content h2 { font-family: 'Montserrat'; font-size: 2.8rem; color: var(--solis-dark); margin-bottom: 10px; position: relative; }
-        .p-content h2::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 80px; height: 5px; background: var(--gold); border-radius: 10px; }
-        .product-box:nth-child(even) .p-content h2::after { left: auto; right: 0; }
+        /* Bilgi İçeriği */
+        .p-content { flex: 1.2; }
+        .p-content h2 { font-family: 'Montserrat'; font-size: 2.2rem; color: var(--solis-dark); margin-bottom: 15px; letter-spacing: -1px; }
+        .p-content h2::after { content: ''; display: block; width: 50px; height: 3px; background: var(--gold); margin-top: 10px; }
+        .product-box:nth-child(even) .p-content h2::after { margin-left: auto; }
         .product-box:nth-child(even) .p-content { text-align: right; }
 
-        .tagline { color: var(--solis-blue); font-weight: 600; font-size: 1.2rem; margin: 35px 0 20px 0; display: block; text-transform: uppercase; letter-spacing: 1px; }
+        .tagline { color: var(--solis-blue); font-weight: 600; font-size: 1rem; margin-bottom: 30px; display: block; }
 
         /* Özellik Listesi */
-        .feature-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
+        .feature-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
         .product-box:nth-child(even) .feature-list { justify-content: end; }
         
-        .feature-list li { display: flex; align-items: center; font-size: 1rem; font-weight: 500; color: #444; }
+        .feature-list li { display: flex; align-items: center; font-size: 0.9rem; color: #666; font-weight: 400; }
         .product-box:nth-child(even) .feature-list li { flex-direction: row-reverse; }
         
         .feature-list li::before { 
-            content: "\f058"; font-family: "Font Awesome 5 Free"; font-weight: 900;
-            color: var(--gold); margin: 0 15px; font-size: 1.2rem;
+            content: "\f00c"; font-family: "Font Awesome 5 Free"; font-weight: 900;
+            color: var(--solis-blue); margin: 0 10px; font-size: 0.8rem;
         }
 
         .cta-btn { 
-            display: inline-block; background: #25d366; color: white; padding: 18px 45px; 
-            border-radius: 100px; text-decoration: none; font-weight: 800; margin-top: 40px; 
-            transition: 0.4s; box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
-            text-transform: uppercase; letter-spacing: 1px;
+            display: inline-block; background: var(--solis-dark); color: white; padding: 14px 35px; 
+            text-decoration: none; font-weight: 700; margin-top: 40px; 
+            transition: 0.3s; font-size: 0.85rem; border-radius: 4px;
         }
-        .cta-btn:hover { background: var(--solis-dark); color: var(--gold); transform: translateY(-5px) scale(1.05); }
-
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        .cta-btn:hover { background: var(--gold); color: var(--solis-dark); }
 
         @media (max-width: 992px) {
-            .product-box, .product-box:nth-child(even) { flex-direction: column; text-align: center; gap: 30px; }
+            .side-decoration { display: none; }
+            .product-box, .product-box:nth-child(even) { flex-direction: column; text-align: center; gap: 40px; }
             .feature-list { grid-template-columns: 1fr; }
+            .product-box:nth-child(even) .p-content h2::after { margin: 10px auto; }
             .product-box:nth-child(even) .feature-list li { flex-direction: row; }
         }
     </style>
 </head>
 <body>
 
-    <div class="bubble" style="width: 80px; height: 80px; top: 15%; left: 5%;"></div>
-    <div class="bubble" style="width: 120px; height: 120px; top: 45%; right: 2%;"></div>
-    <div class="bubble" style="width: 60px; height: 60px; bottom: 10%; left: 3%;"></div>
-    <div class="bubble" style="width: 100px; height: 100px; top: 70%; left: 85%;"></div>
+    <div class="side-decoration side-left"></div>
+    <div class="side-decoration side-right"></div>
 
     <nav>
         <div class="nav-container">
@@ -175,7 +155,7 @@
                     <li>Suyun sertlik durumu ölçümü</li>
                     <li>Işıklı sistem</li>
                 </ul>
-                <a href="https://wa.me/905387098253" class="cta-btn"><i class="fab fa-whatsapp"></i> WhatsApp Bilgi Al</a>
+                <a href="https://wa.me/905387098253" class="cta-btn">DETAYLI BİLGİ AL</a>
             </div>
         </div>
 
@@ -194,7 +174,7 @@
                     <li>Gold iyonlu filtre</li>
                     <li>Paslanmaz tank</li>
                 </ul>
-                <a href="https://wa.me/905387098253" class="cta-btn"><i class="fab fa-whatsapp"></i> WhatsApp Bilgi Al</a>
+                <a href="https://wa.me/905387098253" class="cta-btn">DETAYLI BİLGİ AL</a>
             </div>
         </div>
 
@@ -210,7 +190,7 @@
                     <li>Coconut bazlı tatlandırıcı filtre</li>
                     <li>Paslanmaz musluk</li>
                 </ul>
-                <a href="https://wa.me/905387098253" class="cta-btn"><i class="fab fa-whatsapp"></i> WhatsApp Bilgi Al</a>
+                <a href="https://wa.me/905387098253" class="cta-btn">DETAYLI BİLGİ AL</a>
             </div>
         </div>
 
@@ -226,7 +206,7 @@
                     <li>75 GPD Membran</li>
                     <li>Paslanmaz tank</li>
                 </ul>
-                <a href="https://wa.me/905387098253" class="cta-btn"><i class="fab fa-whatsapp"></i> WhatsApp Bilgi Al</a>
+                <a href="https://wa.me/905387098253" class="cta-btn">DETAYLI BİLGİ AL</a>
             </div>
         </div>
 
@@ -242,7 +222,7 @@
                     <li>80 GPD Membran</li>
                     <li>Paslanmaz tank</li>
                 </ul>
-                <a href="https://wa.me/905387098253" class="cta-btn"><i class="fab fa-whatsapp"></i> WhatsApp Bilgi Al</a>
+                <a href="https://wa.me/905387098253" class="cta-btn">DETAYLI BİLGİ AL</a>
             </div>
         </div>
 
