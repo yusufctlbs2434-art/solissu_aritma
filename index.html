@@ -36,33 +36,36 @@
         .hero-btn { background: var(--gold); color: var(--solis-dark); padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 900; transition: 0.3s; display: inline-block; }
 
         /* Sections */
-        .section { padding: 100px 0; }
+        .section { padding: 80px 0; }
         .container { max-width: 1200px; margin: auto; padding: 0 20px; }
         
         /* Vizyon Misyon */
         .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 80px; }
-        .vm-box { background: var(--light-bg); padding: 50px; border-radius: 20px; border-bottom: 4px solid var(--solis-blue); }
+        .vm-box { background: var(--light-bg); padding: 50px; border-radius: 20px; border-bottom: 4px solid var(--solis-blue); transition: 0.3s; }
+        .vm-box h2 { font-family: 'Montserrat'; color: var(--solis-dark); margin-bottom: 20px; font-size: 1.8rem; }
 
-        /* SSS Zigzag Yapı */
+        /* SSS Zigzag */
         .faq-header { text-align: center; margin-bottom: 60px; }
         .faq-header h2 { font-family: 'Montserrat'; font-size: 2.8rem; color: var(--solis-dark); position: relative; display: inline-block; }
         .faq-header h2::after { content: ''; width: 80px; height: 4px; background: var(--gold); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+
         .faq-row { display: flex; align-items: center; gap: 50px; margin-bottom: 40px; background: #fff; padding: 30px; border-radius: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); border: 1px solid #f0f0f0; }
         .faq-row.reverse { flex-direction: row-reverse; }
         .faq-img-box { flex: 1; text-align: center; }
         .faq-img-box img { max-width: 100%; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,119,190,0.15); border: 5px solid #fff; }
         .faq-text-box { flex: 1.5; }
         .faq-text-box h3 { color: var(--solis-dark); font-family: 'Montserrat'; font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .faq-text-box h3 i { color: var(--gold); }
 
-        /* --- VİDEO BÖLÜMÜ STİLLERİ --- */
+        /* --- VİDEO BÖLÜMÜ (ZIRHLI STİLLER) --- */
         .video-section { background: var(--light-bg); padding: 80px 0; border-top: 1px solid #eee; }
-        .intro-video-wrapper { max-width: 750px; margin: 0 auto 60px; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: 6px solid #fff; }
+        .intro-video-wrapper { max-width: 700px; margin: 0 auto 60px; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.2); border: 8px solid #fff; position: relative; }
         .intro-video-wrapper video { width: 100%; display: block; background: #000; }
 
         .reels-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-        .reels-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 9/16; background: #000; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-        .reels-card video { width: 100%; height: 100%; object-fit: cover; opacity: 0.95; }
-        .reels-overlay { position: absolute; bottom: 15px; left: 15px; color: white; pointer-events: none; font-size: 1.2rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+        .reels-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 9/16; background: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .reels-card video { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+        .reels-overlay { position: absolute; bottom: 15px; left: 15px; color: white; font-size: 1.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 
         /* Footer */
         #contact { background: var(--solis-dark); color: white; text-align: center; padding: 80px 0; }
@@ -70,7 +73,6 @@
         .c-btn { padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; color: white; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
         .btn-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .btn-wp { background: #25d366; }
-        .btn-mail { background: var(--solis-blue); }
         .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.2); text-decoration: none; }
 
         @media (max-width: 992px) { .faq-row, .faq-row.reverse { flex-direction: column; text-align: center; } .vm-grid { grid-template-columns: 1fr; } }
@@ -82,7 +84,7 @@
         <div class="marquee">
             <span><i class="fas fa-check-circle"></i> 81 İLDE ÜCRETSİZ KURULUM</span>
             <span><i class="fas fa-history"></i> 14 GÜN DENEME SÜRESİ</span>
-            <span><i class="fas fa-credit-card"></i> KREDİ KARTINA TAKSİT İMKANI</span>
+            <span><i class="fas fa-credit-card"></i> TAKSİT İMKANI</span>
             <span><i class="fas fa-shield-alt"></i> 2 YIL RESMİ GARANTİ</span>
         </div>
     </div>
@@ -115,37 +117,37 @@
             <div class="vm-grid">
                 <div class="vm-box">
                     <h2>Vizyonumuz</h2>
-                    <p>İleri teknoloji filtrasyon sistemlerimizle, Türkiye'nin her noktasına en saf ve sağlıklı suyu ulaştırarak yaşam kalitesini artırmak; sürdürülebilir bir gelecek için plastik kullanımını minimuma indiren öncü bir marka olmaktır.</p>
+                    <p>İleri teknoloji filtrasyon sistemlerimizle, Türkiye'nin her noktasına en saf ve sağlıklı suyu ulaştırarak yaşam kalitesini artırmak; sürdürülebilir bir gelecek için plastik kullanımını minimuma indirmektir.</p>
                 </div>
                 <div class="vm-box">
                     <h2>Misyonumuz</h2>
-                    <p>Yüksek mühendislik standartlarına sahip cihazlarımızla şebeke suyunu moleküler düzeyde arındırmak, koşulsuz müşteri memnuniyeti ilkesiyle 81 ilde profesyonel teknik destek ve kurulum hizmeti sağlamaktır.</p>
+                    <p>Yüksek mühendislik standartlarına sahip cihazlarımızla şebeke suyunu moleküler düzeyde arındırmak, 81 ilde profesyonel teknik destek sağlamaktır.</p>
                 </div>
             </div>
 
             <div class="faq-header"><h2>Merak Edilenler</h2></div>
 
             <div class="faq-row">
-                <div class="faq-img-box"><img src="img/anasayfa.png" alt="Solis Çalışma Prensibi"></div>
+                <div class="faq-img-box"><img src="img/anasayfa.png" alt="Solis Çalışma"></div>
                 <div class="faq-text-box">
                     <h3><i class="fas fa-cogs"></i> Cihazlarımız nasıl çalışıyor?</h3>
-                    <p>Cihazlarımız, gelişmiş filtrasyon teknolojileri sayesinde musluk suyundaki klor, kireç, ağır metaller, bakteriler ve diğer zararlı maddeleri yüksek performansla arındırır. Bu süreçte suyun doğal mineral dengesi korunur.</p>
+                    <p>Cihazlarımız, gelişmiş filtrasyon teknolojileri sayesinde musluk suyundaki klor, kireç ve ağır metalleri yüksek performansla arındırır.</p>
                 </div>
             </div>
 
             <div class="faq-row reverse">
-                <div class="faq-img-box"><img src="img/slider.png" alt="Filtre Değişimi"></div>
+                <div class="faq-img-box"><img src="img/slider.png" alt="Filtre"></div>
                 <div class="faq-text-box">
                     <h3><i class="fas fa-sync-alt"></i> Filtre değişimi ne sıklıkla yapılmalı?</h3>
-                    <p>Filtre değişim süreleri kullanım yoğunluğuna ve şebeke suyu kalitesine bağlı olarak ortalama 6 ile 12 ay arasında değişkenlik gösterir.</p>
+                    <p>Filtre değişim süreleri kullanım yoğunluğuna göre ortalama 6 ile 12 ay arasında değişkenlik gösterir.</p>
                 </div>
             </div>
 
             <div class="faq-row">
-                <div class="faq-img-box"><img src="img/slider2.png" alt="Kurulum Süreci"></div>
+                <div class="faq-img-box"><img src="img/slider2.png" alt="Kurulum"></div>
                 <div class="faq-text-box">
                     <h3><i class="fas fa-tools"></i> Su arıtma cihazı kurulumu nasıl yapılıyor?</h3>
-                    <p>Kurulum sürecimiz son derece hızlıdır: Randevu sonrası uzman teknisyenlerimiz cihazı mutfak tezgahı altına monte eder. Ücretsiz kurulum genellikle 15-30 dakika sürer.</p>
+                    <p>Kurulum sürecimiz son derece hızlıdır. Ücretsiz kurulum genellikle 15-30 dakika sürer.</p>
                 </div>
             </div>
         </div>
@@ -153,10 +155,10 @@
 
     <section class="video-section">
         <div class="container">
-            <div class="faq-header"><h2>Tanıtım & Deneyimler</h2></div>
+            <div class="faq-header"><h2>Müşteri Deneyimleri</h2></div>
 
             <div class="intro-video-wrapper">
-                <video controls autoplay muted loop playsinline poster="img/banner.png">
+                <video id="main-video" controls autoplay muted loop playsinline poster="img/banner.png">
                     <source src="img/tanitim-video.mp4" type="video/mp4">
                     Tarayıcınız video oynatmayı desteklemiyor.
                 </video>
@@ -164,19 +166,19 @@
 
             <div class="reels-grid">
                 <div class="reels-card">
-                    <video loop muted autoplay playsinline><source src="img/kullanici1.mp4" type="video/mp4"></video>
+                    <video class="reel-vid" loop muted autoplay playsinline><source src="img/kullanici1.mp4" type="video/mp4"></video>
                     <div class="reels-overlay"><i class="fab fa-instagram"></i></div>
                 </div>
                 <div class="reels-card">
-                    <video loop muted autoplay playsinline><source src="img/kullanici2.mp4" type="video/mp4"></video>
+                    <video class="reel-vid" loop muted autoplay playsinline><source src="img/kullanici2.mp4" type="video/mp4"></video>
                     <div class="reels-overlay"><i class="fab fa-instagram"></i></div>
                 </div>
                 <div class="reels-card">
-                    <video loop muted autoplay playsinline><source src="img/kullanici3.mp4" type="video/mp4"></video>
+                    <video class="reel-vid" loop muted autoplay playsinline><source src="img/kullanici3.mp4" type="video/mp4"></video>
                     <div class="reels-overlay"><i class="fab fa-instagram"></i></div>
                 </div>
                 <div class="reels-card">
-                    <video loop muted autoplay playsinline><source src="img/kullanici4.mp4" type="video/mp4"></video>
+                    <video class="reel-vid" loop muted autoplay playsinline><source src="img/kullanici4.mp4" type="video/mp4"></video>
                     <div class="reels-overlay"><i class="fab fa-instagram"></i></div>
                 </div>
             </div>
@@ -188,7 +190,6 @@
             <h2>Hemen Bizimle İletişime Geçin</h2>
             <div class="contact-btns">
                 <a href="https://www.instagram.com/solissuaritma/" class="c-btn btn-insta" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                <a href="mailto:iletisim@solissuaritma.com" class="c-btn btn-mail"><i class="fas fa-envelope"></i> E-Posta</a>
                 <a href="https://wa.me/905387098253" class="c-btn btn-wp"><i class="fab fa-whatsapp"></i> WhatsApp Destek</a>
             </div>
         </div>
@@ -196,5 +197,32 @@
 
     <a href="https://wa.me/905387098253" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const allVideos = document.querySelectorAll('video');
+            
+            // 1. Tarayıcıyı zorla (Autoplay engeline karşı)
+            const forcePlay = () => {
+                allVideos.forEach(v => {
+                    v.muted = true; // Kesinlikle sessiz olmalı
+                    v.play().catch(e => console.log("Oynatma tetiklendi"));
+                });
+                document.removeEventListener('click', forcePlay);
+                document.removeEventListener('touchstart', forcePlay);
+            };
+
+            // Kullanıcı sayfada herhangi bir yere dokunduğunda videoları başlat
+            document.addEventListener('click', forcePlay);
+            document.addEventListener('touchstart', forcePlay);
+
+            // 2. Hover kontrolü (Opsiyonel: Hover yapınca sesi açmak istersen v.muted = false yapabilirsin)
+            const reels = document.querySelectorAll('.reels-card');
+            reels.forEach(card => {
+                const v = card.querySelector('video');
+                card.addEventListener('mouseenter', () => { v.play(); });
+                card.addEventListener('mouseleave', () => { v.pause(); });
+            });
+        });
+    </script>
 </body>
 </html>
