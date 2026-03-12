@@ -29,68 +29,52 @@
         .nav-links a { text-decoration: none; color: var(--solis-dark); font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--gold); }
 
-        /* --- HERO BÖLÜMÜ --- */
-        .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,45,91,0.8), rgba(0,45,91,0.8)), url('img/banner.png') center/cover no-repeat;
-            display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 0 20px;
-        }
+        /* Hero */
+        .hero { height: 60vh; background: linear-gradient(rgba(0,45,91,0.8), rgba(0,45,91,0.8)), url('img/banner.png') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 0 20px; }
         .hero-content h1 { font-family: 'Montserrat'; font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; }
         .hero-content h1 span { color: var(--gold); }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
         .hero-btn { background: var(--gold); color: var(--solis-dark); padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 900; transition: 0.3s; display: inline-block; }
-        .hero-btn:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        /* Sections */
+        /* SSS & Vizyon Bölümü */
         .section { padding: 100px 0; }
         .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-        
-        /* Vizyon Misyon */
         .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 80px; }
-        .vm-box { background: var(--light-bg); padding: 50px; border-radius: 20px; border-bottom: 4px solid var(--solis-blue); transition: 0.3s; }
+        .vm-box { background: var(--light-bg); padding: 50px; border-radius: 20px; border-bottom: 4px solid var(--solis-blue); }
         .vm-box h2 { font-family: 'Montserrat'; color: var(--solis-dark); margin-bottom: 20px; font-size: 1.8rem; }
 
-        /* --- SSS (GÖRSEL VE ZIGZAG YAPI) --- */
         .faq-header { text-align: center; margin-bottom: 60px; }
         .faq-header h2 { font-family: 'Montserrat'; font-size: 2.8rem; color: var(--solis-dark); position: relative; display: inline-block; }
         .faq-header h2::after { content: ''; width: 80px; height: 4px; background: var(--gold); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
 
+        /* Zigzag Yapı - */
         .faq-row { display: flex; align-items: center; gap: 50px; margin-bottom: 40px; background: #fff; padding: 30px; border-radius: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); border: 1px solid #f0f0f0; }
         .faq-row.reverse { flex-direction: row-reverse; }
         .faq-img-box { flex: 1; text-align: center; }
         .faq-img-box img { max-width: 100%; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,119,190,0.15); border: 5px solid #fff; }
         .faq-text-box { flex: 1.5; }
         .faq-text-box h3 { color: var(--solis-dark); font-family: 'Montserrat'; font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .faq-text-box h3 i { color: var(--gold); font-size: 1.2rem; }
-        .faq-text-box p { color: #555; font-size: 1.05rem; }
+        .faq-text-box h3 i { color: var(--gold); }
 
-        /* --- VİDEO DENEYİM ALANI (YENİ) --- */
+        /* Video Bölümü Düzenlemeleri */
         .video-section { background: var(--light-bg); padding: 100px 0; border-top: 1px solid #eee; }
-        .intro-video-container { max-width: 900px; margin: 0 auto 80px; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: 8px solid #fff; }
-        .intro-video-container video { width: 100%; display: block; }
+        .intro-video-wrapper { max-width: 700px; margin: 0 auto 60px; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: 8px solid #fff; }
+        .intro-video-wrapper video { width: 100%; display: block; background: #000; }
 
-        .reels-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 40px; }
+        .reels-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
         .reels-card { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 9/16; background: #000; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .reels-card video { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; cursor: pointer; transition: 0.3s; }
+        .reels-card video { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; transition: 0.3s; }
         .reels-card:hover video { opacity: 1; transform: scale(1.03); }
         .reels-overlay { position: absolute; bottom: 20px; left: 20px; color: white; pointer-events: none; }
-        .reels-overlay i { font-size: 1.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 
-        /* Footer / Contact */
+        /* Footer */
         #contact { background: var(--solis-dark); color: white; text-align: center; padding: 80px 0; }
         .contact-btns { display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
         .c-btn { padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; color: white; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
         .btn-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .btn-wp { background: #25d366; }
-        .btn-mail { background: var(--solis-blue); }
-
         .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.2); text-decoration: none; }
 
-        @media (max-width: 992px) {
-            .faq-row, .faq-row.reverse { flex-direction: column; text-align: center; }
-            .vm-grid { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 2.5rem; }
-        }
+        @media (max-width: 992px) { .faq-row, .faq-row.reverse { flex-direction: column; text-align: center; } .vm-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -132,23 +116,21 @@
             <div class="vm-grid">
                 <div class="vm-box">
                     <h2>Vizyonumuz</h2>
-                    <p>İleri teknoloji filtrasyon sistemlerimizle, Türkiye'nin her noktasına en saf ve sağlıklı suyu ulaştırarak yaşam kalitesini artırmak; sürdürülebilir bir gelecek için plastik kullanımını minimuma indiren öncü bir marka olmaktır.</p>
+                    <p>İleri teknoloji filtrasyon sistemlerimizle, Türkiye'nin her noktasına en saf suyu ulaştırarak yaşam kalitesini artırmaktır.</p>
                 </div>
                 <div class="vm-box">
                     <h2>Misyonumuz</h2>
-                    <p>Yüksek mühendislik standartlarına sahip cihazlarımızla şebeke suyunu moleküler düzeyde arındırmak, koşulsuz müşteri memnuniyeti ilkesiyle 81 ilde profesyonel teknik destek ve kurulum hizmeti sağlamaktır.</p>
+                    <p>Yüksek mühendislik standartlarına sahip cihazlarımızla şebeke suyunu moleküler düzeyde arındırmak ve müşteri memnuniyeti sağlamaktır.</p>
                 </div>
             </div>
 
-            <div class="faq-header">
-                <h2>Merak Edilenler</h2>
-            </div>
+            <div class="faq-header"><h2>Merak Edilenler</h2></div>
 
             <div class="faq-row">
                 <div class="faq-img-box"><img src="img/anasayfa.png" alt="Solis Çalışma Prensibi"></div>
                 <div class="faq-text-box">
                     <h3><i class="fas fa-cogs"></i> Cihazlarımız nasıl çalışıyor?</h3>
-                    <p>Cihazlarımız, gelişmiş filtrasyon teknolojileri sayesinde musluk suyundaki klor, kireç, ağır metaller, bakteriler ve diğer zararlı maddeleri yüksek performansla arındırır. Bu süreçte suyun doğal mineral dengesi korunur.</p>
+                    <p>Cihazlarımız, gelişmiş filtrasyon teknolojileri sayesinde musluk suyundaki klor, kireç ve ağır metalleri yüksek performansla arındırır.</p>
                 </div>
             </div>
 
@@ -156,7 +138,7 @@
                 <div class="faq-img-box"><img src="img/slider.png" alt="Filtre Değişimi"></div>
                 <div class="faq-text-box">
                     <h3><i class="fas fa-sync-alt"></i> Filtre değişimi ne sıklıkla yapılmalı?</h3>
-                    <p>Filtre değişim süreleri kullanım yoğunluğuna ve şebeke suyu kalitesine bağlı olarak ortalama 6 ile 12 ay arasında değişkenlik gösterir. Teknik ekibimiz bakım takviminizi yönetmektedir.</p>
+                    <p>Filtre değişim süreleri kullanım yoğunluğuna göre ortalama 6 ile 12 ay arasında değişkenlik gösterir.</p>
                 </div>
             </div>
 
@@ -164,7 +146,7 @@
                 <div class="faq-img-box"><img src="img/slider2.png" alt="Kurulum Süreci"></div>
                 <div class="faq-text-box">
                     <h3><i class="fas fa-tools"></i> Su arıtma cihazı kurulumu nasıl yapılıyor?</h3>
-                    <p>Kurulum sürecimiz son derece hızlıdır: Randevu planlanır, uzman teknisyenlerimiz cihazı mutfak tezgahı altına monte eder. Ücretsiz kurulum genellikle 15-30 dakika sürer.</p>
+                    <p>Uzman teknisyenlerimiz cihazı mutfak tezgahı altına monte eder. Ücretsiz kurulum genellikle 15-30 dakika sürer.</p>
                 </div>
             </div>
         </div>
@@ -172,39 +154,37 @@
 
     <section class="video-section">
         <div class="container">
-            <div class="faq-header">
-                <h2>Tanıtım & Müşteri Deneyimleri</h2>
-            </div>
+            <div class="faq-header"><h2>Tanıtım & Müşteri Deneyimleri</h2></div>
 
-            <div class="intro-video-container">
-                <video controls poster="img/banner.png">
-                    <source src="img/tanıtım-video.mp4" type="video/mp4">
-                    Tarayıcınız video etiketini desteklemiyor.
+            <div class="intro-video-wrapper">
+                <video controls playsinline poster="img/banner.png">
+                    <source src="img/tanitim-video.mp4" type="video/mp4">
+                    Tarayıcınız video oynatmayı desteklemiyor.
                 </video>
             </div>
 
             <div class="reels-grid">
                 <div class="reels-card">
-                    <video loop muted onmouseover="this.play()" onmouseout="this.pause()">
-                        <source src="img/kullancı1.mp4" type="video/mp4">
+                    <video loop muted playsinline class="hover-play">
+                        <source src="img/kullanici1.mp4" type="video/mp4">
                     </video>
                     <div class="reels-overlay"><i class="fab fa-instagram"></i></div>
                 </div>
                 <div class="reels-card">
-                    <video loop muted onmouseover="this.play()" onmouseout="this.pause()">
-                        <source src="img/kullancı2.mp4" type="video/mp4">
+                    <video loop muted playsinline class="hover-play">
+                        <source src="img/kullanici2.mp4" type="video/mp4">
                     </video>
                     <div class="reels-overlay"><i class="fab fa-instagram"></i></div>
                 </div>
                 <div class="reels-card">
-                    <video loop muted onmouseover="this.play()" onmouseout="this.pause()">
-                        <source src="img/kullancı3.mp4" type="video/mp4">
+                    <video loop muted playsinline class="hover-play">
+                        <source src="img/kullanici3.mp4" type="video/mp4">
                     </video>
                     <div class="reels-overlay"><i class="fab fa-instagram"></i></div>
                 </div>
                 <div class="reels-card">
-                    <video loop muted onmouseover="this.play()" onmouseout="this.pause()">
-                        <source src="img/kullancı4.mp4" type="video/mp4">
+                    <video loop muted playsinline class="hover-play">
+                        <source src="img/kullanici4.mp4" type="video/mp4">
                     </video>
                     <div class="reels-overlay"><i class="fab fa-instagram"></i></div>
                 </div>
@@ -217,7 +197,6 @@
             <h2>Hemen Bizimle İletişime Geçin</h2>
             <div class="contact-btns">
                 <a href="https://www.instagram.com/solissuaritma/" class="c-btn btn-insta" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                <a href="mailto:iletisim@solissuaritma.com" class="c-btn btn-mail"><i class="fas fa-envelope"></i> E-Posta</a>
                 <a href="https://wa.me/905387098253" class="c-btn btn-wp"><i class="fab fa-whatsapp"></i> WhatsApp Destek</a>
             </div>
         </div>
@@ -225,5 +204,13 @@
 
     <a href="https://wa.me/905387098253" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
+    <script>
+        // Hover ile video oynatma/durdurma
+        const vids = document.querySelectorAll('.hover-play');
+        vids.forEach(v => {
+            v.addEventListener('mouseenter', () => { v.play(); });
+            v.addEventListener('mouseleave', () => { v.pause(); });
+        });
+    </script>
 </body>
 </html>
