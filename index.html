@@ -152,6 +152,98 @@
     font-weight: 600;
     color: var(--solis-dark);
 }
+/* VIDEO TESTIMONIAL SECTION */
+
+.video-section{
+padding:120px 0;
+background:#f8fbff;
+}
+
+.video-header{
+text-align:center;
+margin-bottom:70px;
+}
+
+.video-header h2{
+font-family:'Montserrat';
+font-size:2.8rem;
+color:var(--solis-dark);
+}
+
+.video-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:25px;
+align-items:stretch;
+}
+
+.video-card{
+position:relative;
+border-radius:18px;
+overflow:hidden;
+cursor:pointer;
+transition:0.4s;
+background:#000;
+}
+
+.video-card:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 20px 60px rgba(0,0,0,0.25);
+}
+
+.video-card video{
+width:100%;
+height:100%;
+object-fit:cover;
+aspect-ratio:9/16;
+display:block;
+}
+
+/* overlay */
+
+.video-overlay{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+padding:20px;
+background:linear-gradient(transparent,rgba(0,0,0,0.7));
+color:#fff;
+font-weight:600;
+font-size:0.9rem;
+}
+
+/* play icon */
+
+.video-card::after{
+content:'▶';
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:45px;
+color:white;
+opacity:0.9;
+pointer-events:none;
+}
+
+/* responsive */
+
+@media(max-width:1100px){
+
+.video-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:600px){
+
+.video-grid{
+grid-template-columns:1fr;
+}
+
+}
     </style>
 </head>
 <body>
@@ -251,50 +343,51 @@
     <section class="video-section">
     <div class="container">
 
-        <div class="video-header">
-            <h2>Sizden Gelenler</h2>
-        </div>
+<div class="video-header">
+<h2>Sizden Gelenler</h2>
+</div>
 
-        <div class="video-grid">
+<div class="video-grid">
 
-            <div class="video-card">
-                <video controls>
-                    <source src="img/kullanici1.mp4" type="video/mp4">
-                </video>
-                <div class="video-info">Kullanıcı Deneyimi</div>
-            </div>
+<div class="video-card">
+<video controls>
+<source src="img/kullanici1.mp4" type="video/mp4">
+</video>
+<div class="video-overlay">Gerçek Kullanıcı</div>
+</div>
 
-            <div class="video-card">
-                <video controls>
-                    <source src="img/kullanici2.mp4" type="video/mp4">
-                </video>
-                <div class="video-info">Kullanıcı Yorumu</div>
-            </div>
+<div class="video-card">
+<video controls>
+<source src="img/kullanici2.mp4" type="video/mp4">
+</video>
+<div class="video-overlay">Kullanıcı Deneyimi</div>
+</div>
 
-            <div class="video-card">
-                <video controls>
-                    <source src="img/kullanici3.mp4" type="video/mp4">
-                </video>
-                <div class="video-info">Gerçek Kullanıcı</div>
-            </div>
+<div class="video-card">
+<video controls>
+<source src="img/kullanici3.mp4" type="video/mp4">
+</video>
+<div class="video-overlay">Memnuniyet Yorumu</div>
+</div>
 
-            <div class="video-card">
-                <video controls>
-                    <source src="img/kullanici4.mp4" type="video/mp4">
-                </video>
-                <div class="video-info">Memnuniyet Yorumu</div>
-            </div>
+<div class="video-card">
+<video controls>
+<source src="img/kullanici4.mp4" type="video/mp4">
+</video>
+<div class="video-overlay">Gerçek Deneyim</div>
+</div>
 
-            <div class="video-card">
-                <video controls>
-                    <source src="img/tanitim-video.mp4" type="video/mp4">
-                </video>
-                <div class="video-info">Solis Tanıtım</div>
-            </div>
+<div class="video-card">
+<video controls>
+<source src="img/tanitim-video.mp4" type="video/mp4">
+</video>
+<div class="video-overlay">Solis Tanıtım</div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
+
 </section>
 
     <footer id="contact">
