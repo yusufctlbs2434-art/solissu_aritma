@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Solis Su Arıtma | Profesyonel Arıtma Çözümleri</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
 
-:root {
+:root{
 --solis-blue:#0077be;
 --solis-dark:#002d5b;
 --gold:#d4af37;
@@ -18,58 +21,31 @@
 --light-bg:#f9fbff;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
 font-family:'Poppins',sans-serif;
 background:var(--white);
-color:#333;
-line-height:1.6;
-overflow-x:hidden;
 }
 
-/* Billboard */
+/* TOP BAR */
 
 .top-bar{
 background:var(--solis-dark);
-color:var(--white);
-overflow:hidden;
-white-space:nowrap;
+color:white;
 padding:12px 0;
-font-size:0.85rem;
-font-weight:600;
-border-bottom:2px solid var(--gold);
+text-align:center;
+font-size:14px;
 }
 
-.marquee{
-display:inline-block;
-animation:marquee 25s linear infinite;
-}
-
-.marquee span{
-margin-right:60px;
-text-transform:uppercase;
-letter-spacing:1px;
-}
-
-.marquee i{
-color:var(--gold);
-margin-right:8px;
-}
-
-@keyframes marquee{
-0%{transform:translateX(100%)}
-100%{transform:translateX(-100%)}
-}
-
-/* Navbar */
+/* NAVBAR */
 
 nav{
-background:var(--white);
-padding:10px 0;
-position:sticky;
-top:0;
-z-index:1000;
+background:white;
 box-shadow:0 4px 20px rgba(0,0,0,0.08);
 }
 
@@ -79,7 +55,7 @@ margin:auto;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:0 30px;
+padding:10px 30px;
 }
 
 .logo-box{
@@ -100,7 +76,9 @@ font-weight:900;
 color:var(--solis-dark);
 }
 
-.logo-text span{color:var(--gold)}
+.logo-text span{
+color:var(--gold);
+}
 
 .nav-links{
 display:flex;
@@ -112,11 +90,7 @@ gap:30px;
 text-decoration:none;
 color:var(--solis-dark);
 font-weight:700;
-font-size:0.9rem;
-transition:0.3s;
 }
-
-.nav-links a:hover{color:var(--gold)}
 
 /* HERO SLIDER */
 
@@ -126,13 +100,7 @@ height:65vh;
 overflow:hidden;
 }
 
-.hero-slider{
-position:absolute;
-width:100%;
-height:100%;
-}
-
-.slide{
+.hero-slide{
 position:absolute;
 width:100%;
 height:100%;
@@ -142,70 +110,61 @@ opacity:0;
 transition:opacity 1s ease;
 }
 
-.slide.active{
+.hero-slide.active{
 opacity:1;
 }
 
+/* overlay */
+
 .hero-overlay{
 position:absolute;
-top:0;
-left:0;
 width:100%;
 height:100%;
-background:linear-gradient(
-to right,
-rgba(0,45,91,0.75) 0%,
-rgba(0,45,91,0.5) 35%,
-rgba(0,0,0,0) 70%
-);
+background:linear-gradient(to right,rgba(0,45,91,0.8),rgba(0,45,91,0.4),transparent);
 }
+
+/* slogan */
 
 .hero-content{
 position:absolute;
 left:8%;
 bottom:18%;
 color:white;
-max-width:500px;
 z-index:2;
-text-align:left;
+max-width:500px;
 }
 
 .hero-content h4{
-font-size:0.9rem;
 letter-spacing:2px;
 margin-bottom:10px;
+font-size:14px;
 }
 
 .hero-content h1{
 font-family:'Montserrat';
 font-size:3rem;
-font-weight:900;
 margin-bottom:20px;
 }
 
-.hero-content h1 span{
+.hero-content span{
 color:var(--gold);
 }
 
 .hero-btn{
 background:var(--gold);
 color:var(--solis-dark);
-padding:18px 45px;
-border-radius:50px;
+padding:14px 32px;
+border-radius:40px;
 text-decoration:none;
-font-weight:900;
+font-weight:700;
 display:inline-block;
-transition:0.3s;
 }
 
-.hero-btn:hover{
-transform:scale(1.05);
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
+/* SECTION */
+
+.section{
+padding:100px 0;
 }
-
-/* Sections */
-
-.section{padding:100px 0;}
 
 .container{
 max-width:1200px;
@@ -213,37 +172,11 @@ margin:auto;
 padding:0 20px;
 }
 
-/* Vizyon Misyon */
-
-.vm-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-margin-bottom:80px;
-}
-
-.vm-box{
-background:var(--light-bg);
-padding:50px;
-border-radius:20px;
-border-bottom:4px solid var(--solis-blue);
-}
-
-.vm-box h2{
-font-family:'Montserrat';
-margin-bottom:20px;
-}
-
-/* Video */
+/* VIDEO */
 
 .video-section{
 padding:100px 0;
 background:var(--light-bg);
-}
-
-.video-header{
-text-align:center;
-margin-bottom:60px;
 }
 
 .video-grid{
@@ -257,8 +190,7 @@ margin:auto;
 .video-card{
 border-radius:16px;
 overflow:hidden;
-background:#000;
-box-shadow:0 12px 35px rgba(0,0,0,0.12);
+background:black;
 }
 
 .video-card video{
@@ -274,7 +206,7 @@ text-align:center;
 font-weight:600;
 }
 
-/* Footer */
+/* FOOTER */
 
 #contact{
 background:var(--solis-dark);
@@ -306,64 +238,52 @@ gap:10px;
 .btn-wp{background:#25d366}
 .btn-mail{background:var(--solis-blue)}
 
-.wa-float{
-position:fixed;
-bottom:30px;
-right:30px;
-background:#25d366;
-color:white;
-width:65px;
-height:65px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:2.2rem;
-}
-
 </style>
+
 </head>
 
 <body>
 
 <div class="top-bar">
-<div class="marquee">
-<span><i class="fas fa-check-circle"></i> 81 İLDE ÜCRETSİZ KURULUM</span>
-<span><i class="fas fa-history"></i> 14 GÜN DENEME SÜRESİ</span>
-<span><i class="fas fa-credit-card"></i> KREDİ KARTINA TAKSİT İMKANI</span>
-<span><i class="fas fa-shield-alt"></i> 2 YIL RESMİ GARANTİ</span>
-</div>
+81 İLDE ÜCRETSİZ KURULUM • 14 GÜN DENEME • 2 YIL GARANTİ
 </div>
 
 <nav>
+
 <div class="nav-container">
 
-<a href="index.html" class="logo-box">
+<a href="#" class="logo-box">
+
 <img src="img/logo.png">
-<div class="logo-text">SOLİS <span>SU ARITMA</span></div>
+
+<div class="logo-text">
+SOLİS <span>SU ARITMA</span>
+</div>
+
 </a>
 
 <ul class="nav-links">
-<li><a href="index.html">ANASAYFA</a></li>
-<li><a href="#about">KURUMSAL</a></li>
-<li><a href="urunler.html">ÜRÜNLER</a></li>
-<li><a href="#contact">İLETİŞİM</a></li>
+
+<li><a href="#">ANASAYFA</a></li>
+<li><a href="#">KURUMSAL</a></li>
+<li><a href="#">ÜRÜNLER</a></li>
+<li><a href="#">İLETİŞİM</a></li>
+
 </ul>
 
 </div>
+
 </nav>
+
+<!-- HERO -->
 
 <header class="hero">
 
-<div class="hero-slider">
+<div class="hero-slide active" style="background-image:url('img/banner.png')"></div>
 
-<div class="slide active" style="background-image:url('img/banner.png')"></div>
+<div class="hero-slide" style="background-image:url('img/banner2.png')"></div>
 
-<div class="slide" style="background-image:url('img/banner2.png')"></div>
-
-<div class="slide" style="background-image:url('img/banner3.jpg')"></div>
-
-</div>
+<div class="hero-slide" style="background-image:url('img/banner3.jpg')"></div>
 
 <div class="hero-overlay"></div>
 
@@ -373,7 +293,9 @@ font-size:2.2rem;
 
 <h1>Aileniz İçin <span>En Saf Su</span></h1>
 
-<a href="urunler.html" class="hero-btn">Detaylı Bilgi Al</a>
+<a href="urunler.html" class="hero-btn">
+Detaylı Bilgi Al
+</a>
 
 </div>
 
@@ -381,10 +303,11 @@ font-size:2.2rem;
 
 <script>
 
-let slides=document.querySelectorAll(".slide");
+let slides=document.querySelectorAll(".hero-slide");
+
 let index=0;
 
-function changeSlide(){
+setInterval(()=>{
 
 slides[index].classList.remove("active");
 
@@ -396,8 +319,10 @@ index=0;
 
 slides[index].classList.add("active");
 
-}
-
-setInterval(changeSlide,5000);
+},5000);
 
 </script>
+
+</body>
+
+</html>
