@@ -494,6 +494,86 @@ transition:transform 0.5s ease;
 .video-card:hover video{
 transform:scale(1.05);
 }
+/* FOOTER */
+
+.footer{
+background:#002d5b;
+color:white;
+padding:80px 0 30px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px;
+margin-bottom:40px;
+}
+
+.footer-col h3{
+font-family:'Montserrat';
+margin-bottom:15px;
+}
+
+.footer-col h4{
+margin-bottom:15px;
+}
+
+.footer-col p{
+color:#cfd8e3;
+line-height:1.6;
+}
+
+.footer-col ul{
+list-style:none;
+padding:0;
+}
+
+.footer-col ul li{
+margin-bottom:10px;
+color:#cfd8e3;
+}
+
+.footer-col ul li a{
+color:#cfd8e3;
+text-decoration:none;
+transition:0.3s;
+}
+
+.footer-col ul li a:hover{
+color:white;
+}
+
+.footer-social{
+display:flex;
+gap:15px;
+margin-top:10px;
+}
+
+.footer-social a{
+color:white;
+font-size:20px;
+background:#0077be;
+width:40px;
+height:40px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+transition:0.3s;
+}
+
+.footer-social a:hover{
+background:#d4af37;
+color:#002d5b;
+}
+
+.footer-bottom{
+border-top:1px solid rgba(255,255,255,0.1);
+padding-top:20px;
+text-align:center;
+color:#cfd8e3;
+font-size:0.9rem;
+}
     </style>
 </head>
 <body>
@@ -800,16 +880,86 @@ Gerçek kullanıcı deneyimlerinden bazıları
 
 </section>
 
-    <footer id="contact">
-        <div class="container">
-            <h2>Hemen Bizimle İletişime Geçin</h2>
-            <div class="contact-btns">
-                <a href="https://www.instagram.com/solissuaritma/" class="c-btn btn-insta" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                <a href="mailto:iletisim@solissuaritma.com" class="c-btn btn-mail"><i class="fas fa-envelope"></i> E-Posta</a>
-                <a href="https://wa.me/905387098253" class="c-btn btn-wp"><i class="fab fa-whatsapp"></i> WhatsApp Destek</a>
-            </div>
-        </div>
-    </footer>
+    <footer class="footer">
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-col">
+
+<h3>Solis Su Arıtma</h3>
+
+<p>
+Solis Su Arıtma teknolojileri ile sağlıklı içme suyuna kolayca ulaşın.
+Türkiye genelinde profesyonel kurulum ve servis hizmeti sunuyoruz.
+</p>
+
+</div>
+
+
+<div class="footer-col">
+
+<h4>Hızlı Menü</h4>
+
+<ul>
+
+<li><a href="index.html">Anasayfa</a></li>
+<li><a href="#about">Kurumsal</a></li>
+<li><a href="urunler.html">Ürünler</a></li>
+<li><a href="#contact">İletişim</a></li>
+
+</ul>
+
+</div>
+
+
+<div class="footer-col">
+
+<h4>İletişim</h4>
+
+<ul>
+
+<li><i class="fas fa-phone"></i> 0538 709 82 53</li>
+<li><i class="fas fa-envelope"></i> iletisim@solissuaritma.com</li>
+<li><i class="fas fa-map-marker-alt"></i> Türkiye</li>
+
+</ul>
+
+</div>
+
+
+<div class="footer-col">
+
+<h4>Bizi Takip Edin</h4>
+
+<div class="footer-social">
+
+<a href="https://www.instagram.com/solissuaritma/" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://wa.me/905387098253" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>© 2026 Solis Su Arıtma • Tüm hakları saklıdır</p>
+
+</div>
+
+</div>
+
+</footer>
+    
 
     <a href="https://wa.me/905387098253" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <script>
