@@ -69,12 +69,23 @@ gap: 60px;
         .product-box:nth-child(even) { flex-direction: row-reverse; }
 
         /* Görsel Kutusu (Sade ve Şık) */
-        .p-image-wrapper { 
-            flex: 1; 
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-        }
+     .p-image-wrapper { 
+flex: 1; 
+display: flex;
+justify-content: center;
+padding: 30px;
+position: relative;
+}
+
+.p-image-wrapper::before{
+content:"";
+position:absolute;
+width:280px;
+height:280px;
+background:radial-gradient(circle, rgba(0,119,190,0.15), transparent 70%);
+filter:blur(20px);
+z-index:-1;
+}
        .p-image-wrapper img { 
 width: 100%; 
 max-width: 380px; 
@@ -88,7 +99,7 @@ transform:scale(1.05);
 }
 
         /* Bilgi İçeriği */
-        .p-content { 
+.p-content { 
 flex: 1.2; 
 }
 
