@@ -75,19 +75,49 @@ gap: 60px;
             justify-content: center;
             padding: 20px;
         }
-        .p-image-wrapper img { 
-            width: 100%; 
-            max-width: 380px; 
-            object-fit: contain; 
-            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.08));
-        }
+       .p-image-wrapper img { 
+width: 100%; 
+max-width: 380px; 
+object-fit: contain; 
+filter: drop-shadow(0 20px 30px rgba(0,0,0,0.08));
+transition:0.4s ease;
+}
+
+.product-box:hover .p-image-wrapper img{
+transform:scale(1.05);
+}
 
         /* Bilgi İçeriği */
-        .p-content { flex: 1.2; }
-        .p-content h2 { font-family: 'Montserrat'; font-size: 2.2rem; color: var(--solis-dark); margin-bottom: 15px; letter-spacing: -1px; }
-        .p-content h2::after { content: ''; display: block; width: 50px; height: 3px; background: var(--gold); margin-top: 10px; }
-        .product-box:nth-child(even) .p-content h2::after { margin-left: auto; }
-        .product-box:nth-child(even) .p-content { text-align: right; }
+        .p-content { 
+flex: 1.2; 
+}
+
+.p-content h2 { 
+font-family:'Montserrat'; 
+font-size:2.3rem; 
+color:var(--solis-dark); 
+margin-bottom:15px; 
+letter-spacing:-0.5px;
+line-height:1.2;
+}
+
+.p-content h2::after { 
+content:''; 
+display:block; 
+width:60px; 
+height:3px; 
+background:var(--gold); 
+margin-top:12px; 
+border-radius:2px;
+}
+
+.product-box:nth-child(even) .p-content h2::after { 
+margin-left:auto; 
+}
+
+.product-box:nth-child(even) .p-content { 
+text-align:right; 
+}
 
         .tagline { color: var(--solis-blue); font-weight: 600; font-size: 1rem; margin-bottom: 30px; display: block; }
 
@@ -103,11 +133,24 @@ gap: 60px;
             color: var(--solis-blue); margin: 0 10px; font-size: 0.8rem;
         }
 
-        .cta-btn { 
-            display: inline-block; background: var(--solis-dark); color: white; padding: 14px 35px; 
-            text-decoration: none; font-weight: 700; margin-top: 40px; 
-            transition: 0.3s; font-size: 0.85rem; border-radius: 4px;
-        }
+        .cta-btn{
+display:inline-block;
+background:linear-gradient(135deg,#002d5b,#0077be);
+color:white;
+padding:15px 38px;
+text-decoration:none;
+font-weight:700;
+margin-top:40px;
+font-size:0.9rem;
+border-radius:40px;
+transition:0.35s;
+}
+
+.cta-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+        
         .cta-btn:hover { background: var(--gold); color: var(--solis-dark); }
 
         @media (max-width: 992px) {
@@ -202,6 +245,20 @@ margin-bottom:10px;
 .page-hero p{
 font-size:1.1rem;
 opacity:0.9;
+}
+.product-box{
+position:relative;
+}
+
+.product-box::after{
+content:"";
+position:absolute;
+bottom:-60px;
+left:50%;
+transform:translateX(-50%);
+width:60%;
+height:1px;
+background:linear-gradient(to right, transparent, #ddd, transparent);
 }
     </style>
 </head>
