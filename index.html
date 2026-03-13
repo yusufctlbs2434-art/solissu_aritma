@@ -45,6 +45,29 @@
         .hero-content p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
         .hero-btn { background: var(--gold); color: var(--solis-dark); padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 900; transition: 0.3s; display: inline-block; }
         .hero-btn:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .hero-features{
+display:flex;
+gap:20px;
+margin:20px 0 30px 0;
+flex-wrap:wrap;
+}
+
+.hero-features span{
+display:flex;
+align-items:center;
+gap:8px;
+font-size:0.95rem;
+font-weight:600;
+color:white;
+background:rgba(255,255,255,0.15);
+padding:8px 14px;
+border-radius:20px;
+backdrop-filter:blur(4px);
+}
+
+.hero-features i{
+color:var(--gold);
+}
 
         /* Sections */
         .section { padding: 100px 0; }
@@ -233,6 +256,29 @@ transition:0.3s;
 .hero-btn:hover{
 transform:scale(1.05);
 }
+.hero-features{
+display:flex;
+gap:25px;
+margin:20px 0 30px 0;
+flex-wrap:wrap;
+}
+
+.hero-features span{
+display:flex;
+align-items:center;
+gap:8px;
+font-size:0.95rem;
+font-weight:600;
+color:white;
+background:rgba(255,255,255,0.15);
+padding:8px 14px;
+border-radius:20px;
+backdrop-filter:blur(4px);
+}
+
+.hero-features i{
+color:var(--gold);
+}
     </style>
 </head>
 <body>
@@ -278,6 +324,12 @@ transform:scale(1.05);
 <h1>Aileniz İçin <span style="color:var(--gold)">En Saf Su</span></h1>
 
 <p>Solis Su Arıtma teknolojileri ile sağlıklı içme suyuna hemen ulaşın.</p>
+
+<div class="hero-features">
+<span><i class="fas fa-tools"></i> Ücretsiz Kurulum</span>
+<span><i class="fas fa-clock"></i> 14 Gün Deneme</span>
+<span><i class="fas fa-shield-alt"></i> 2 Yıl Garanti</span>
+</div>
 
 <a href="urunler.html" class="hero-btn">Teklif Al</a>
 
