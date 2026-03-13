@@ -55,15 +55,17 @@
         .nav-links a { text-decoration: none; color: var(--solis-dark); font-weight: 700; margin-left: 25px; font-size: 0.9rem; }
 
         /* Ürün Listesi */
-        .container { max-width: 1100px; margin: 80px auto; padding: 0 20px; }
-        
+        .container { 
+max-width: 1350px; 
+margin: 80px auto; 
+padding: 0 40px; 
+}
         .product-box { 
-            display: flex; 
-            align-items: center; 
-            margin-bottom: 150px; 
-            gap: 80px;
-        }
-
+display: flex; 
+align-items: center; 
+margin-bottom: 110px; 
+gap: 60px;
+}
         .product-box:nth-child(even) { flex-direction: row-reverse; }
 
         /* Görsel Kutusu (Sade ve Şık) */
@@ -115,6 +117,69 @@
             .product-box:nth-child(even) .p-content h2::after { margin: 10px auto; }
             .product-box:nth-child(even) .feature-list li { flex-direction: row; }
         }
+.footer{
+background:linear-gradient(135deg,#001c3d,#003d7a);
+color:white;
+padding:90px 0 40px;
+margin-top:120px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px;
+margin-bottom:40px;
+}
+
+.footer-col h4{
+margin-bottom:15px;
+}
+
+.footer-col p{
+color:#cfd8e3;
+line-height:1.6;
+}
+
+.footer-col ul{
+list-style:none;
+padding:0;
+}
+
+.footer-col ul li{
+margin-bottom:10px;
+color:#cfd8e3;
+}
+
+.footer-col ul li a{
+color:#cfd8e3;
+text-decoration:none;
+}
+
+.footer-social{
+display:flex;
+gap:15px;
+margin-top:10px;
+}
+
+.footer-social a{
+color:white;
+font-size:20px;
+background:#0077be;
+width:40px;
+height:40px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+}
+
+.footer-bottom{
+border-top:1px solid rgba(255,255,255,0.1);
+padding-top:20px;
+text-align:center;
+color:#cfd8e3;
+font-size:0.9rem;
+}
     </style>
 </head>
 <body>
@@ -226,6 +291,81 @@
         </div>
 
     </div>
+<footer class="footer">
 
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-col">
+
+<h3>Solis Su Arıtma</h3>
+
+<p>
+Solis Su Arıtma teknolojileri ile sağlıklı içme suyuna kolayca ulaşın.
+Türkiye genelinde profesyonel kurulum ve servis hizmeti sunuyoruz.
+</p>
+
+</div>
+
+
+<div class="footer-col">
+
+<h4>Hızlı Menü</h4>
+
+<ul>
+
+<li><a href="index.html">Anasayfa</a></li>
+<li><a href="urunler.html">Ürünler</a></li>
+
+</ul>
+
+</div>
+
+
+<div class="footer-col">
+
+<h4>İletişim</h4>
+
+<ul>
+
+<li><i class="fas fa-phone"></i> 0538 709 82 53</li>
+<li><i class="fas fa-envelope"></i> iletisim@solissuaritma.com</li>
+<li><i class="fas fa-map-marker-alt"></i> Türkiye</li>
+
+</ul>
+
+</div>
+
+
+<div class="footer-col">
+
+<h4>Bizi Takip Edin</h4>
+
+<div class="footer-social">
+
+<a href="https://www.instagram.com/solissuaritma/" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://wa.me/905387098253" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>© 2026 Solis Su Arıtma • Tüm hakları saklıdır</p>
+
+</div>
+
+</div>
+
+</footer>
 </body>
 </html>
