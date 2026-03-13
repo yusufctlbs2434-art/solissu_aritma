@@ -443,17 +443,17 @@ color:#555;
 <div class="stats-grid">
 
 <div class="stat-box">
-<h3>2500+</h3>
+<h3 class="counter" data-target="2500">0</h3>
 <p>Mutlu Müşteri</p>
 </div>
 
 <div class="stat-box">
-<h3>81</h3>
+<h3 class="counter" data-target="81">0</h3>
 <p>İlde Hizmet</p>
 </div>
 
 <div class="stat-box">
-<h3>%98</h3>
+<h3 class="counter" data-target="98">0</h3>
 <p>Müşteri Memnuniyeti</p>
 </div>
 
@@ -652,6 +652,42 @@ slides[index].classList.add("active");
 }
 
 setInterval(changeSlide,5000);
+
+</script>
+<script>
+
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+
+counter.innerText = '0';
+
+const updateCounter = () => {
+
+const target = +counter.getAttribute('data-target');
+
+const count = +counter.innerText;
+
+const increment = target / 100;
+
+if(count < target){
+
+counter.innerText = Math.ceil(count + increment);
+
+setTimeout(updateCounter,20);
+
+}
+else{
+
+counter.innerText = target.toLocaleString();
+
+}
+
+};
+
+updateCounter();
+
+});
 
 </script>
 </body>
