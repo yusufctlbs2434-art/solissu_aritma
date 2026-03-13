@@ -19,14 +19,52 @@
         @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
         /* Navbar */
-        nav { background: var(--white); padding: 10px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+       nav { 
+background: var(--white); 
+padding: 14px 0; 
+position: sticky; 
+top: 0; 
+z-index: 1000; 
+box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
         .nav-container { max-width: 1400px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
         .logo-box { display: flex; align-items: center; text-decoration: none; }
-        .logo-box img { height: 60px; width: auto; margin-right: 15px; }
-        .logo-text { font-family: 'Montserrat'; font-size: 1.6rem; font-weight: 900; color: var(--solis-dark); }
-        .logo-text span { color: var(--gold); }
+        /* LOGO TASARIMI */
+
+.logo-box{
+display:flex;
+align-items:center;
+text-decoration:none;
+gap:18px;
+}
+
+.logo-box img{
+height:72px;
+width:auto;
+}
+
+.logo-text{
+font-family:'Montserrat';
+font-size:2rem;
+font-weight:900;
+letter-spacing:1px;
+color:var(--solis-dark);
+line-height:1.1;
+}
+
+.logo-text span{
+color:var(--gold);
+font-weight:800;
+}
         .nav-links { display: flex; list-style: none; gap: 30px; }
-        .nav-links a { text-decoration: none; color: var(--solis-dark); font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a{
+text-decoration:none;
+color:var(--solis-dark);
+font-weight:700;
+font-size:0.95rem;
+letter-spacing:0.5px;
+transition:0.3s;
+}
         .nav-links a:hover { color: var(--gold); }
 
         /* --- HERO BÖLÜMÜ --- */
