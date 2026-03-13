@@ -449,6 +449,30 @@ font-weight:600;
 color:#002d5b;
 font-size:0.9rem;
 }
+/* OFFER BUTTON */
+
+.offer-btn{
+position:fixed;
+bottom:110px;
+right:30px;
+background:#0077be;
+color:white;
+padding:14px 22px;
+border-radius:50px;
+font-weight:600;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+display:flex;
+align-items:center;
+gap:8px;
+z-index:999;
+transition:0.3s;
+}
+
+.offer-btn:hover{
+transform:scale(1.05);
+background:#005f98;
+}
     </style>
 </head>
 <body>
@@ -854,5 +878,8 @@ reveals[i].classList.add("active");
 window.addEventListener("scroll", reveal);
 
 </script>
+<a href="urunler.html" class="offer-btn">
+<i class="fas fa-water"></i> Teklif Al
+</a>
 </body>
 </html>
