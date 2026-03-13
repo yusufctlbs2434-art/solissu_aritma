@@ -216,11 +216,15 @@ height:100%;
 background-size:cover;
 background-position:center;
 opacity:0;
-transition:opacity 1s ease-in-out;
+transition:opacity 1s ease-in-out, transform 5s ease;
+transform:scale(1);
 }
-
 .hero-slide.active{
 opacity:1;
+}
+.hero-slide.active{
+opacity:1;
+transform:scale(1.08);
 }
 
 .hero-overlay{
