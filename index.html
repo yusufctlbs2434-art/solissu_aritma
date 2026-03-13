@@ -279,6 +279,57 @@ backdrop-filter:blur(4px);
 .hero-features i{
 color:var(--gold);
 }
+/* WHY SOLIS */
+
+.why-solis{
+padding:90px 0;
+background:white;
+}
+
+.why-title{
+text-align:center;
+font-family:'Montserrat';
+font-size:2.4rem;
+margin-bottom:60px;
+color:var(--solis-dark);
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+}
+
+.why-card{
+background:var(--light-bg);
+padding:40px 30px;
+border-radius:18px;
+text-align:center;
+transition:0.3s;
+border-bottom:4px solid var(--solis-blue);
+}
+
+.why-card:hover{
+transform:translateY(-6px);
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+.why-card i{
+font-size:32px;
+color:var(--gold);
+margin-bottom:15px;
+}
+
+.why-card h3{
+font-family:'Montserrat';
+margin-bottom:10px;
+color:var(--solis-dark);
+}
+
+.why-card p{
+font-size:0.95rem;
+color:#555;
+}
     </style>
 </head>
 <body>
@@ -336,6 +387,43 @@ color:var(--gold);
 </div>
 
 </header>
+<section class="why-solis">
+
+<div class="container">
+
+<h2 class="why-title">Neden Solis Su Arıtma?</h2>
+
+<div class="why-grid">
+
+<div class="why-card">
+<i class="fas fa-filter"></i>
+<h3>5 Aşamalı Filtrasyon</h3>
+<p>Gelişmiş filtreleme sistemi ile suyunuzdaki zararlı maddeleri etkili şekilde arındırır.</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-leaf"></i>
+<h3>Mineral Koruma</h3>
+<p>Arıtma sürecinde suyun doğal mineral yapısı korunarak sağlıklı içme suyu elde edilir.</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-volume-mute"></i>
+<h3>Sessiz Çalışma</h3>
+<p>Gelişmiş sistem yapısı sayesinde cihazlarımız son derece sessiz çalışır.</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-tools"></i>
+<h3>Ücretsiz Kurulum</h3>
+<p>Türkiye genelinde uzman ekiplerimiz tarafından ücretsiz kurulum hizmeti sunulur.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
 
     <section class="section" id="about">
         <div class="container">
