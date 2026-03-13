@@ -379,6 +379,18 @@ margin-bottom:10px;
 font-size:0.95rem;
 color:#555;
 }
+/* SCROLL ANIMATION */
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
     </style>
 </head>
 <body>
@@ -440,7 +452,7 @@ color:#555;
 
 <div class="container">
 
-<div class="stats-grid">
+<div class="stats-grid reveal">
 
 <div class="stat-box">
 <h3 class="counter" data-target="+2500">0</h3>
@@ -453,7 +465,7 @@ color:#555;
 </div>
 
 <div class="stat-box">
-<h3 class="counter" data-target="98">0</h3>
+<h3 class="counter" data-target="+96">0</h3>
 <p>Müşteri Memnuniyeti</p>
 </div>
 
@@ -507,7 +519,7 @@ color:#555;
 
     <section class="section" id="about">
         <div class="container">
-            <div class="vm-grid">
+            <div class="vm-grid reveal">
                 <div class="vm-box">
                     <h2>Vizyonumuz</h2>
                     <p>Solis Su Arıtma olarak vizyonumuz; ileri teknoloji filtrasyon sistemlerimizle Türkiye’nin her noktasına en saf, en güvenilir ve en sağlıklı suyu ulaştırarak toplumun yaşam kalitesini kalıcı olarak artırmaktır. Sadece bugünü değil, yarınları da düşünerek, temiz su erişimini herkes için ulaşılabilir kılmayı ve çevreye duyarlı çözümlerimizle doğayı korumayı hedefliyoruz.
@@ -524,7 +536,7 @@ color:#555;
                 <h2>Merak Edilenler</h2>
             </div>
 
-            <div class="faq-row">
+           <div class="faq-row reveal">
                 <div class="faq-img-box">
                     <img src="img/anasayfa.png" alt="Solis Çalışma Prensibi">
                 </div>
@@ -546,7 +558,7 @@ color:#555;
                 </div>
             </div>
 
-            <div class="faq-row">
+            <div class="faq-row reveal">
                 <div class="faq-img-box">
                     <img src="img/slider2.png" alt="Kurulum Süreci">
                 </div>
@@ -577,7 +589,7 @@ color:#555;
 <h2>Sizden Gelenler</h2>
 </div>
 
-<div class="video-grid">
+<div class="video-grid reveal">
 
 <div class="video-card">
 <video controls>
@@ -688,6 +700,35 @@ counter.innerText = target.toLocaleString();
 updateCounter();
 
 });
+ 
+
+
+</script>
+<script>
+
+function reveal(){
+
+var reveals = document.querySelectorAll(".reveal");
+
+for(var i = 0; i < reveals.length; i++){
+
+var windowHeight = window.innerHeight;
+
+var elementTop = reveals[i].getBoundingClientRect().top;
+
+var elementVisible = 120;
+
+if(elementTop < windowHeight - elementVisible){
+
+reveals[i].classList.add("active");
+
+}
+
+}
+
+}
+
+window.addEventListener("scroll", reveal);
 
 </script>
 </body>
