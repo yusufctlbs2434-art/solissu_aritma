@@ -748,28 +748,38 @@ scroll-margin-top:120px;
     cursor: pointer;
     transition: 0.3s;
 }
-
 @media (max-width: 992px) {
-    .menu-btn { 
-        display: block; 
-        order: 2; /* Butonu sağ tarafa alır */
-    }
-
+    /* Navbar'ı esnek yap ve elemanları uçlara it */
     .nav-container { 
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
         padding: 10px 20px;
         position: relative;
-        display: flex; /* Esnek kutu yapısı */
-        justify-content: space-between; /* Logo sola, buton sağa yaslanır */
-        align-items: center; /* İkisini dikeyde aynı hizaya getirir */
     }
 
+    /* Logo sola yaslansın ve çok geniş yer kaplamasın */
     .logo-box {
-        order: 1; /* Logonun sol tarafta kalmasını sağlar */
+        order: 1;
+        flex: 0 1 auto;
     }
 
+    .logo-box img {
+        height: 60px !important; /* Mobilde biraz daha kibar dursun */
+    }
+
+    /* Hamburger butonu sağa yaslansın */
+    .menu-btn { 
+        display: block !important;
+        order: 2;
+        margin: 0;
+        padding: 10px;
+    }
+
+    /* Menü linkleri (Açılır panel) */
     .nav-links {
         position: absolute;
-        top: 100%; 
+        top: 100%;
         left: 0;
         width: 100%;
         background: #fff;
@@ -781,7 +791,7 @@ scroll-margin-top:120px;
         box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         z-index: 999;
     }
-    
+
     .nav-links.active {
         max-height: 500px;
         padding: 10px 0;
