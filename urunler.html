@@ -271,12 +271,58 @@ width:60%;
 height:1px;
 background:linear-gradient(to right, transparent, #ddd, transparent);
 }
+/* ÜST HAREKETLİ BİLGİ BAR */
+
+.top-bar{
+background:#002d5b;
+color:#ffffff;
+overflow:hidden;
+white-space:nowrap;
+padding:12px 0;
+font-size:0.85rem;
+font-weight:600;
+border-bottom:2px solid #d4af37;
+}
+
+.marquee{
+display:inline-block;
+animation:marquee 25s linear infinite;
+}
+
+.marquee span{
+margin-right:60px;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+.marquee i{
+color:#d4af37;
+margin-right:8px;
+}
+
+@keyframes marquee{
+0%{transform:translateX(100%)}
+100%{transform:translateX(-100%)}
+}
     </style>
 </head>
 <body>
 
     <div class="side-decoration side-left"></div>
     <div class="side-decoration side-right"></div>
+
+    <body>
+
+<div class="top-bar">
+    <div class="marquee">
+        <span><i class="fas fa-check-circle"></i> 81 İLDE ÜCRETSİZ KURULUM</span>
+        <span><i class="fas fa-history"></i> 14 GÜN DENEME SÜRESİ</span>
+        <span><i class="fas fa-credit-card"></i> TAKSİT İMKANI</span>
+        <span><i class="fas fa-shield-alt"></i> 2 YIL RESMİ GARANTİ</span>
+    </div>
+</div>
+
+<nav>
 
     <nav>
         <div class="nav-container">
