@@ -750,16 +750,26 @@ scroll-margin-top:120px;
 }
 
 @media (max-width: 992px) {
-    .menu-btn { display: block; }
+    .menu-btn { 
+        display: block; 
+        order: 2; /* Butonu sağ tarafa alır */
+    }
 
     .nav-container { 
         padding: 10px 20px;
         position: relative;
+        display: flex; /* Esnek kutu yapısı */
+        justify-content: space-between; /* Logo sola, buton sağa yaslanır */
+        align-items: center; /* İkisini dikeyde aynı hizaya getirir */
+    }
+
+    .logo-box {
+        order: 1; /* Logonun sol tarafta kalmasını sağlar */
     }
 
     .nav-links {
         position: absolute;
-        top: 100%; /* Navbar'ın tam altından başlar */
+        top: 100%; 
         left: 0;
         width: 100%;
         background: #fff;
@@ -771,8 +781,7 @@ scroll-margin-top:120px;
         box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         z-index: 999;
     }
-
-    /* Menü aktifken açılmasını sağlar */
+    
     .nav-links.active {
         max-height: 500px;
         padding: 10px 0;
