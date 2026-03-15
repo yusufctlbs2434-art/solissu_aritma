@@ -19,17 +19,16 @@
         @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
         /* Navbar */
-   nav{
+  nav{
 background:var(--white);
-padding:26px 0;
+height:95px;
+display:flex;
+align-items:center;
 position:sticky;
 top:0;
 z-index:1000;
 box-shadow:0 4px 20px rgba(0,0,0,0.08);
 transition:0.35s;
-}
-nav.scrolled{
-padding:10px 0;
 }
    .nav-container { max-width: 1400px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
         .logo-box { display: flex; align-items: center; text-decoration: none; }
@@ -49,9 +48,8 @@ transition:0.35s;
 }
 
 nav.scrolled .logo-box img{
-height:60px;
+transform:scale(0.8);
 }
-
 .logo-text{
 font-family:'Montserrat';
 font-size:2rem;
@@ -684,6 +682,9 @@ padding-top:20px;
 text-align:center;
 color:#cfd8e3;
 font-size:0.9rem;
+}
+nav.scrolled{
+box-shadow:0 8px 25px rgba(0,0,0,0.12);
 }
     </style>
 </head>
