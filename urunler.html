@@ -346,6 +346,49 @@ margin-right:8px;
     /* Footer */
     .footer-grid { grid-template-columns: 1fr; text-align: center; }
 }
+/* --- MOBİL NAVİGASYON VE ÜRÜN DÜZENİ --- */
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--solis-dark);
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    /* Navbar ve Hamburger */
+    .menu-btn { display: block; }
+    .nav-container { padding: 10px 20px; position: relative; }
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        gap: 0 !important;
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.4s ease-in-out;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+    .nav-links.active { max-height: 500px; padding: 10px 0; }
+    .nav-links li { width: 100%; text-align: center; border-bottom: 1px solid #f5f5f5; }
+    .nav-links a { padding: 18px; display: block; margin: 0 !important; }
+
+    /* Ürün Sayfasına Özel: Zigzag Yapıyı Alt Alta Getirir */
+    .product-box, .product-box:nth-child(even) { 
+        flex-direction: column !important; 
+        text-align: center; 
+        gap: 30px;
+        margin-bottom: 70px;
+    }
+    .p-content h2::after { margin: 12px auto !important; }
+    .feature-list { grid-template-columns: 1fr; text-align: left; max-width: 280px; margin: 20px auto; }
+    .product-box:nth-child(even) .feature-list li { flex-direction: row; }
+}
     </style>
 </head>
 <body>
@@ -367,19 +410,25 @@ margin-right:8px;
 <nav>
 
     <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo-box">
-                <img src="img/logo.png" alt="Solis Logo">
-                <div class="logo-text">SOLİS <span style="color:var(--gold)"> SU ARITMA</span></div>
-            </a>
-            <div class="nav-links">
-             <a href="index.html">ANASAYFA</a>
-                 <a href="index.html#about">KURUMSAL</a>
-                     <a href="urunler.html" style="color:var(--gold)">ÜRÜNLER</a>
-             <a href="index.html#contact">İLETİŞİM</a> 
-</div>
-        </div>
-    </nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo-box">
+            <img src="img/logo.png" alt="Solis Logo" style="height: 75px;"> <div class="logo-text" style="font-size: 1.8rem;">
+                SOLİS <span style="color:var(--gold)">SU ARITMA</span>
+            </div>
+        </a>
+
+        <button class="menu-btn" id="menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">ANASAYFA</a></li>
+            <li><a href="index.html#about">KURUMSAL</a></li>
+            <li><a href="urunler.html" style="color:var(--gold)">ÜRÜNLER</a></li>
+            <li><a href="index.html#contact">İLETİŞİM</a></li>
+        </ul>
+    </div>
+</nav>
     <section class="page-hero">
 
 <div>
@@ -559,5 +608,27 @@ Türkiye genelinde profesyonel kurulum ve servis hizmeti sunuyoruz.
 </div>
 
 </footer>
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = menuBtn.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.className = 'fas fa-times';
+        } else {
+            icon.className = 'fas fa-bars';
+        }
+    });
+
+    // Sayfa içindeki bir linke (veya logo linkine) tıklandığında menüyü kapat
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuBtn.querySelector('i').className = 'fas fa-bars';
+        });
+    });
+</script>
 </body>
 </html>
