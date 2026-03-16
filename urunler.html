@@ -48,7 +48,7 @@
 
         /* Navbar */
         nav { background: var(--white); padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee; }
-        .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+       .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
         .logo-box { display: flex; align-items: center; text-decoration: none; }
         .logo-box img { height: 60px; margin-right: 12px; }
         .logo-text { font-family: 'Montserrat'; font-size: 1.6rem; font-weight: 900; color: var(--solis-dark); }
@@ -356,21 +356,29 @@ margin-right:8px;
     cursor: pointer;
 }
 @media (max-width: 992px) {
-    /* Navbar Düzeni */
+   /* Navbar Düzeni */
     .nav-container { 
         display: flex !important;
+        flex-direction: row !important; /* Yan yana olmayı zorla */
         justify-content: space-between !important;
         align-items: center !important;
+        flex-wrap: nowrap !important; /* Alt satıra düşmeyi yasakla */
         padding: 10px 20px;
         position: relative;
+        width: 100% !important;
     }
 
-    .logo-box { order: 1; flex: 0 1 auto; }
+   .logo-box { 
+        order: 1 !important; 
+        flex: 0 1 auto !important; /* Sadece kendi boyutu kadar yer kaplasın */
+    }
     .logo-box img { height: 60px !important; }
 
-    .menu-btn { 
+   .menu-btn { 
         display: block !important;
-        order: 2;
+        order: 2 !important; 
+        margin: 0 !important;
+        flex: 0 0 auto !important; /* Sıkışmasını engelle */
     }
 
     .nav-links {

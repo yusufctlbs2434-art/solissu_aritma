@@ -30,7 +30,7 @@ z-index:1000;
 box-shadow:0 4px 20px rgba(0,0,0,0.08);
 transition:0.35s;
 }
-   .nav-container { max-width: 1400px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px; }
+  .nav-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; width: 100%; }
         .logo-box { display: flex; align-items: center; text-decoration: none; }
         /* LOGO TASARIMI */
 
@@ -808,6 +808,51 @@ scroll-margin-top:120px;
         display: block;
         margin: 0 !important;
         font-size: 1rem;
+    }
+}
+/* --- MOBİL VE WEB NAVBAR KESİN DÜZELTME --- */
+
+/* 1. Önce Web (Masaüstü) ayarını her cihazda yan yana olacak şekilde zorluyoruz */
+.nav-container { 
+    display: flex !important; 
+    flex-direction: row !important; 
+    justify-content: space-between !important; 
+    align-items: center !important; 
+    flex-wrap: nowrap !important; /* Alt satıra inmeyi engeller */
+    width: 100% !important;
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px 20px;
+}
+
+/* 2. Sadece Mobil (992px altı) için özel yerleşim */
+@media (max-width: 992px) {
+    .logo-box { 
+        order: 1 !important; /* Logo daima solda */
+        flex: 0 1 auto !important; 
+    }
+    
+    .menu-btn { 
+        display: block !important; 
+        order: 2 !important; /* Hamburger buton daima sağda */
+        margin: 0 !important;
+    }
+
+    /* Menü linklerinin tasarımı bozulmasın diye ekledik */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.4s ease-in-out;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .nav-links.active {
+        max-height: 500px;
     }
 }
     </style>
