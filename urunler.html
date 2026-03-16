@@ -419,6 +419,53 @@ margin-right:8px;
     justify-content: space-between !important;
     flex-wrap: nowrap !important;
 }
+/* --- WEB NAVBAR ESKİ DÜZEN GERİ GETİRME (KESİN KOMUT) --- */
+@media (min-width: 993px) {
+    /* 1. Navigasyonu yan yana zorla */
+    nav .nav-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        padding: 0 20px !important;
+    }
+
+    /* 2. Menü listesini yan yana getir ve madde imlerini (noktaları) kaldır */
+    nav .nav-links {
+        display: flex !important;
+        flex-direction: row !important;
+        list-style: none !important; /* Noktaları kaldırır */
+        gap: 30px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 3. Liste elemanlarının stilini temizle */
+    nav .nav-links li {
+        list-style-type: none !important; /* Madde imleçlerini kesin siler */
+        margin: 0 !important;
+    }
+
+    /* 4. Logoyu sola sabitle */
+    nav .logo-box {
+        display: flex !important;
+        align-items: center !important;
+        text-decoration: none !important;
+    }
+}
+
+/* Mobilde butonun sağda kalmasını garantile */
+@media (max-width: 992px) {
+    .nav-container {
+        display: flex !important;
+        justify-content: space-between !important;
+        flex-direction: row !important;
+    }
+    .menu-btn { order: 2 !important; }
+    .logo-box { order: 1 !important; }
+}
     </style>
 </head>
 <body>
