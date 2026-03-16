@@ -466,6 +466,25 @@ margin-right:8px;
     .menu-btn { order: 2 !important; }
     .logo-box { order: 1 !important; }
 }
+/* --- HERO VE NAVBAR ARASINDAKİ BOŞLUĞU EŞİTLEME (KESİN ÇÖZÜM) --- */
+.page-hero {
+    margin-top: 0 !important; /* Navbar ile bitişik olmasını sağlar */
+    padding-top: 40px !important; /* Anasayfa'daki logonun kapladığı alanı taklit eder */
+    height: 50vh !important; /* Anasayfa hero alanıyla orantılı yükseklik */
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Navbar'ın altındaki gereksiz çizgiyi ve boşluğu Anasayfaya benzetelim */
+nav {
+    border-bottom: none !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Ürünler başlığının tam ortalanması için */
+.page-hero div {
+    width: 100%;
+}
     </style>
 </head>
 <body>
