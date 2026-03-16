@@ -904,7 +904,50 @@ nav .nav-container {
         order: 1 !important;
     }
 }
+/* --- ANASAYFA NAVBAR MOBİL DÜZELTME (KESİN KOMUT) --- */
+@media (max-width: 992px) {
+    /* Logo ve Butonu yan yana zorla */
+    nav .nav-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+        padding: 10px 20px !important;
+        width: 100% !important;
+    }
 
+    /* Logoyu sola sabitle */
+    .logo-box {
+        order: 1 !important;
+        flex: 0 1 auto !important;
+    }
+
+    /* Hamburger butonu sağa sabitle */
+    .menu-btn {
+        display: block !important;
+        order: 2 !important;
+        margin: 0 !important;
+        flex: 0 0 auto !important;
+    }
+
+    /* Menü linklerini gizle ve sadece active iken göster */
+    .nav-links {
+        display: none !important; /* Kapalıyken tamamen gizle */
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: #fff !important;
+        flex-direction: column !important;
+        z-index: 9999 !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+
+    .nav-links.active {
+        display: flex !important;
+    }
+}
     </style>
 </head>
 <body>
