@@ -579,132 +579,85 @@ background:black;
 display:block;
 border-radius:16px;
 }
-/* FOOTER */
-
-.footer{
-background:linear-gradient(135deg,#001c3d,#003d7a);
-color:white;
-padding:90px 0 40px;
-position:relative;
-overflow:hidden;
-}
-.footer::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:radial-gradient(circle at 20% 30%,rgba(255,255,255,0.08),transparent 40%),
-radial-gradient(circle at 80% 70%,rgba(255,255,255,0.06),transparent 40%);
-pointer-events:none;
-}
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:50px;
-margin-bottom:50px;
-position:relative;
-z-index:2;
+/* --- ELİT FOOTER TASARIMI --- */
+.footer {
+    background: linear-gradient(135deg, #001c3d, #003d7a);
+    color: white;
+    padding: 90px 0 40px;
+    position: relative;
+    overflow: hidden;
 }
 
-.footer-col h3{
-font-family:'Montserrat';
-margin-bottom:15px;
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.08), transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.06), transparent 40%);
+    pointer-events: none;
 }
 
-.footer-col h4{
-margin-bottom:18px;
-font-size:18px;
-color:#ffffff;
-letter-spacing:0.5px;
-}
-.footer-col h4::after{
-content:"";
-display:block;
-width:40px;
-height:2px;
-background:#d4af37;
-margin-top:8px;
+/* Bilgileri sola, haritayı sağa yaslayan ızgara yapısı */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr 1.5fr; /* Sütun oranları */
+    gap: 40px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
 }
 
-.footer-col p{
-color:#cfd8e3;
-line-height:1.6;
+.footer-col h3 { font-family: 'Montserrat'; margin-bottom: 15px; }
+.footer-col h4 { margin-bottom: 18px; font-size: 18px; color: #ffffff; letter-spacing: 0.5px; }
+.footer-col h4::after { content: ""; display: block; width: 40px; height: 2px; background: #d4af37; margin-top: 8px; }
+.footer-col p { color: #cfd8e3; line-height: 1.6; }
+.footer-col ul { list-style: none; padding: 0; }
+.footer-col ul li { margin-bottom: 10px; color: #cfd8e3; }
+.footer-col ul li a { color: #cfd8e3; text-decoration: none; transition: 0.3s; }
+.footer-col ul li a:hover { color: white; }
+
+/* Sosyal Medya */
+.footer-social { display: flex; gap: 15px; margin-top: 10px; }
+.footer-social a {
+    color: white; font-size: 20px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px);
+    width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; transition: 0.35s; border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.footer-social a:hover { background: #d4af37; color: #002d5b; transform: translateY(-4px); }
+
+/* --- HARİTA KARTI (SAĞ TARAF) --- */
+.footer-map-card {
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    margin-top: 15px;
+}
+.footer-map-card iframe {
+    width: 100%; height: 100%; border: 0;
+    filter: grayscale(100%) invert(90%); /* Koyu tema ile uyum */
 }
 
-.footer-col ul{
-list-style:none;
-padding:0;
+/* Alt Kısım */
+.footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; text-align: center; color: #cfd8e3; font-size: 0.9rem; }
+
+/* --- MOBİL UYUM (RESPONSIVE) --- */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Mobilde her şey alt alta */
+        text-align: center;
+        gap: 30px;
+    }
+    .footer-col h4::after { margin: 8px auto; } /* Başlık altındaki çizgiyi ortalar */
+    .footer-social { justify-content: center; }
+    .footer-map-card { height: 250px; }
 }
 
-.footer-col ul li{
-margin-bottom:10px;
-color:#cfd8e3;
-}
-
-.footer-col ul li a{
-color:#cfd8e3;
-text-decoration:none;
-transition:0.3s;
-}
-
-.footer-col ul li a:hover{
-color:white;
-}
-
-.footer-social{
-display:flex;
-gap:15px;
-margin-top:10px;
-}
-.footer-social a{
-color:white;
-font-size:20px;
-background:rgba(255,255,255,0.1);
-backdrop-filter:blur(8px);
-width:45px;
-height:45px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-transition:0.35s;
-border:1px solid rgba(255,255,255,0.2);
-}
-
-.footer-social a:hover{
-background:#d4af37;
-color:#002d5b;
-transform:translateY(-4px);
-box-shadow:0 8px 20px rgba(0,0,0,0.3);
-}
-.footer-social a:hover{
-background:#d4af37;
-color:#002d5b;
-}
-
-.footer-bottom{
-border-top:1px solid rgba(255,255,255,0.1);
-padding-top:20px;
-text-align:center;
-color:#cfd8e3;
-font-size:0.9rem;
-}
-nav.scrolled{
-box-shadow:0 8px 25px rgba(0,0,0,0.12);
-}
-.video-grid{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:25px;
-max-width:1400px;
-margin:auto;
-align-items:start;
-}
-#contact{
-scroll-margin-top:120px;
-}
 /* --- INDEX.HTML MOBİL UYUM (RESPONSIVE) --- */
 @media (max-width: 992px) {
     /* Navbar & Logo */
@@ -948,59 +901,7 @@ nav .nav-container {
         display: flex !important;
     }
 }
-/* --- PREMIUM HARİTA TASARIMI --- */
-.map-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #001c3d 0%, #002d5b 100%); /* Derin lacivert arka plan */
-    position: relative;
-    border-top: 2px solid rgba(212, 175, 55, 0.1); /* Çok ince altın şerit */
-}
 
-.map-card {
-    max-width: 1000px;
-    margin: 0 auto;
-    height: 500px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-    border: 1px solid rgba(212, 175, 55, 0.3); /* Altın çerçeve */
-    position: relative;
-    transition: 0.5s ease;
-}
-
-.map-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
-    border-color: var(--gold);
-}
-
-.map-card iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    filter: grayscale(100%) invert(90%) contrast(90%); /* Elit koyu tema filtresi */
-    transition: 0.6s ease;
-}
-
-/* Fareyle üzerine gelince harita renklenir (Opsiyonel, premium etki için) */
-.map-card:hover iframe {
-    filter: grayscale(0%) invert(0%) contrast(100%);
-}
-
-.map-label {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: var(--gold);
-    color: var(--solis-dark);
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    pointer-events: none; /* Tıklamayı engelle */
-}
     </style>
 </head>
 <body>
@@ -1342,20 +1243,53 @@ Gerçek kullanıcı deneyimlerinden bazıları
 </section>
 
 </section>
-<section class="map-section">
+<footer class="footer" id="contact">
     <div class="container">
-        <div class="map-card">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.651761405165!2d28.8184561!3d40.9891469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa3705021575f%3A0x6734e7f3408f976!2zU29saXMgU3UgQXLEsXRtYQ!5e0!3m2!1str!2str!4v1710000000000" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
-            <div class="map-label">
-                <i class="fas fa-map-marker-alt"></i> MERKEZ OFİSİMİZ
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Solis <span style="color:#d4af37">Su Arıtma</span></h3>
+                <p>Sağlıklı suyun en saf haliyle tanışın.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/solissuaritma/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/905387098253" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Hızlı Menü</h4>
+                <ul>
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li><a href="urunler.html">Ürünler</a></li>
+                    <li><a href="index.html#about">Kurumsal</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Bize Ulaşın</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> 0538 709 82 53</li>
+                    <li><i class="fas fa-envelope"></i> iletisim@solissuaritma.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Konumumuz</h4>
+                <div class="footer-map-card">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192697.88850529245!2d28.80503774620025!3d41.00537021319253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1cc4584444291c!2zxLBzdGFuYnVs!5e0!3m2!1str!2str!4v1710000000000" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
             </div>
         </div>
+        <div class="footer-bottom">
+            <p>© 2026 Solis Su Arıtma • Tüm hakları saklıdır</p>
+        </div>
     </div>
-</section>
+</footer>
+
 
     <footer id="contact" class="footer">
 
