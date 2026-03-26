@@ -948,18 +948,25 @@ nav .nav-container {
         display: flex !important;
     }
 }
-/* YENİ FOOTER LAYOUT */
+/* FOOTER ANA YAPI (ESKİ GÖRÜNÜM GERİ) */
+.footer {
+    background: linear-gradient(135deg,#001c3d,#003d7a);
+    color: white;
+    padding: 90px 0 40px;
+}
+
+/* GRID YAPI */
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1.2fr; /* sol geniş sağ map */
+    grid-template-columns: 2fr 1fr;
     gap: 60px;
     align-items: start;
 }
 
-/* SOL BLOK */
+/* SOL ALAN */
 .footer-left {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
     gap: 40px;
 }
 
@@ -968,28 +975,29 @@ nav .nav-container {
     text-align: left;
 }
 
+.footer-col p,
+.footer-col li,
+.footer-col a {
+    color: #cfd8e3;
+}
+
 /* MAP KART */
 .footer-map {
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
-    border: 1px solid rgba(255,255,255,0.1);
-    background: #fff;
+    background: rgba(255,255,255,0.05);
+    border-radius: 18px;
+    padding: 10px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 
 /* MAP */
 .footer-map iframe {
     width: 100%;
     height: 300px;
+    border-radius: 12px;
     border: none;
 }
 
-/* HAFİF HOVER */
-.footer-map:hover {
-    transform: translateY(-5px);
-    transition: 0.3s;
-}
-
 /* MOBİL */
 @media(max-width: 992px){
     .footer-grid {
@@ -999,21 +1007,6 @@ nav .nav-container {
     .footer-left {
         grid-template-columns: 1fr;
         text-align: center;
-    }
-
-    .footer-col {
-        text-align: center;
-    }
-}
-
-/* MOBİL */
-@media(max-width: 992px){
-    .footer-grid {
-        flex-direction: column;
-    }
-
-    .footer-left {
-        justify-content: center;
     }
 
     .footer-col {
@@ -1363,7 +1356,7 @@ Gerçek kullanıcı deneyimlerinden bazıları
 </section>
 <div class="footer-grid">
 
-    <!-- SOL ALAN -->
+    <!-- SOL -->
     <div class="footer-left">
 
         <div class="footer-col">
@@ -1407,7 +1400,7 @@ Gerçek kullanıcı deneyimlerinden bazıları
 
     </div>
 
-    <!-- SAĞ TARAF (MAP) -->
+    <!-- SAĞ (MAP) -->
     <div class="footer-map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.488266555726!2d27.974769612117186!3d40.353696671330745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b5d3a67f1fd13d%3A0x6ecddc70a050f005!2zxLBoc2FuaXllLCBLdXJ0dWx1xZ8gQ2QuIE5vOjM5IEQ6YSwgMTAyMDAgQmFuZMSxcm1hL0JhbMSxa2VzaXI!5e0!3m2!1str!2str!4v1774529870861!5m2!1str!2str"
         loading="lazy">
