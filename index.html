@@ -948,6 +948,25 @@ nav .nav-container {
         display: flex !important;
     }
 }
+/* --- HARİTA VE FOOTER TASARIMI --- */
+.map-container {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    border-top: 5px solid var(--gold);
+    line-height: 0;
+}
+
+.map-container iframe {
+    width: 100% !important;
+    height: 100% !important;
+    filter: grayscale(100%) invert(5%) contrast(95%);
+    transition: 0.6s ease;
+}
+
+.map-container:hover iframe {
+    filter: grayscale(0%) invert(0%) contrast(100%);
+}
     </style>
 </head>
 <body>
@@ -1288,6 +1307,15 @@ Gerçek kullanıcı deneyimlerinden bazıları
 
 </section>
 
+</section>
+<section class="map-container">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.488082229797!2d27.974769611963957!3d40.353700759353444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b5d3a67f1fd13d%3A0x6ecddc70a050f005!2zxLBoc2FuaXllLCBLdXJ0dWx1xZ8gQ2QuIE5vOjM5IEQ6YSwgMTAyMDAgQmFuZMSxcm1hL0JhbMSxa2VzaXI!5e0!3m2!1str!2str!4v1774511220820!5m2!1str!2str" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
 </section>
 
     <footer id="contact" class="footer">
