@@ -599,7 +599,7 @@ background:radial-gradient(circle at 20% 30%,rgba(255,255,255,0.08),transparent 
 radial-gradient(circle at 80% 70%,rgba(255,255,255,0.06),transparent 40%);
 pointer-events:none;
 }
-/*.footer-grid{
+.footer-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:50px;
@@ -607,7 +607,7 @@ margin-bottom:50px;
 position:relative;
 z-index:2;
 }
-*/
+
 .footer-col h3{
 font-family:'Montserrat';
 margin-bottom:15px;
@@ -948,121 +948,6 @@ nav .nav-container {
         display: flex !important;
     }
 }
-/* FOOTER ANA YAPI (ESKİ GÖRÜNÜM GERİ) */
-.footer {
-    background: linear-gradient(135deg,#001c3d,#003d7a);
-    color: white;
-    padding: 90px 0 40px;
-}
-
-/* GRID YAPI */
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 60px;
-    align-items: start;
-}
-
-/* SOL ALAN */
-.footer-left {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 40px;
-}
-
-/* YAZILAR */
-.footer-col {
-    text-align: left;
-}
-
-.footer-col p,
-.footer-col li,
-.footer-col a {
-    color: #cfd8e3;
-}
-
-/* MAP KART */
-.footer-map {
-    background: rgba(255,255,255,0.05);
-    border-radius: 18px;
-    padding: 10px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-}
-
-/* MAP */
-.footer-map iframe {
-    width: 100%;
-    height: 300px;
-    border-radius: 12px;
-    border: none;
-}
-
-/* MOBİL */
-@media(max-width: 992px){
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-left {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .footer-col {
-        text-align: center;
-    }
-}
-/* ===== FORCE FOOTER FIX ===== */
-
-.footer .footer-grid{
-    display: grid !important;
-    grid-template-columns: 2fr 1.2fr !important;
-    gap: 60px !important;
-}
-
-.footer-left{
-    display: grid !important;
-    grid-template-columns: repeat(2,1fr) !important;
-    gap: 40px !important;
-}
-
-.footer-map{
-    background: rgba(255,255,255,0.08) !important;
-    padding: 12px !important;
-    border-radius: 20px !important;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4) !important;
-}
-
-.footer-map iframe{
-    width: 100% !important;
-    height: 300px !important;
-    border-radius: 12px !important;
-}
-
-.footer-col{
-    text-align: left !important;
-}
-
-/* MOBİL */
-@media(max-width:992px){
-    .footer .footer-grid{
-        grid-template-columns: 1fr !important;
-    }
-
-    .footer-left{
-        grid-template-columns: 1fr !important;
-        text-align:center !important;
-    }
-
-    .footer-col{
-        text-align:center !important;
-    }
-}
-/* FOOTER ARKA PLAN FIX */
-.footer{
-    background: linear-gradient(135deg, #001c3d, #003d7a) !important;
-}
     </style>
 </head>
 <body>
@@ -1394,7 +1279,7 @@ Gerçek kullanıcı deneyimlerinden bazıları
 <div class="testimonial-card">
 <div class="stars">★★★★★</div>
 <p>“Daha önce başka marka kullanıyorduk. Solis'e geçtikten sonra suyun tadı gerçekten daha iyi geldi.”</p>
-<span>—  </span>
+<span>— Fatma Y. / İstanbul</span>
 </div>
 
 </div>
@@ -1404,60 +1289,87 @@ Gerçek kullanıcı deneyimlerinden bazıları
 </section>
 
 </section>
+
+    <footer id="contact" class="footer">
+
+<div class="container">
+
 <div class="footer-grid">
 
-    <!-- SOL -->
-    <div class="footer-left">
+<div class="footer-col">
 
-        <div class="footer-col">
-            <h3>Solis Su Arıtma</h3>
-            <p>
-            Solis Su Arıtma teknolojileri ile sağlıklı içme suyuna kolayca ulaşın.
-            Türkiye genelinde profesyonel kurulum ve servis hizmeti sunuyoruz.
-            </p>
-        </div>
+<h3>Solis Su Arıtma</h3>
 
-        <div class="footer-col">
-            <h4>Hızlı Menü</h4>
-            <ul>
-                <li><a href="index.html">Anasayfa</a></li>
-                <li><a href="#about">Kurumsal</a></li>
-                <li><a href="urunler.html">Ürünler</a></li>
-                <li><a href="#contact">İletişim</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h4>İletişim</h4>
-            <ul>
-                <li><i class="fas fa-phone"></i> 0538 709 82 53</li>
-                <li><i class="fas fa-envelope"></i> iletisim@solissuaritma.com</li>
-                <li><i class="fas fa-map-marker-alt"></i> Türkiye</li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h4>Bizi Takip Edin</h4>
-            <div class="footer-social">
-                <a href="https://www.instagram.com/solissuaritma/" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://wa.me/905387098253" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- SAĞ (MAP) -->
-    <div class="footer-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.488266555726!2d27.974769612117186!3d40.353696671330745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b5d3a67f1fd13d%3A0x6ecddc70a050f005!2zxLBoc2FuaXllLCBLdXJ0dWx1xZ8gQ2QuIE5vOjM5IEQ6YSwgMTAyMDAgQmFuZMSxcm1hL0JhbMSxa2VzaXI!5e0!3m2!1str!2str!4v1774529870861!5m2!1str!2str"
-        loading="lazy">
-        </iframe>
-    </div>
+<p>
+Solis Su Arıtma teknolojileri ile sağlıklı içme suyuna kolayca ulaşın.
+Türkiye genelinde profesyonel kurulum ve servis hizmeti sunuyoruz.
+</p>
 
 </div>
+
+
+<div class="footer-col">
+
+<h4>Hızlı Menü</h4>
+
+<ul>
+
+<li><a href="index.html">Anasayfa</a></li>
+<li><a href="#about">Kurumsal</a></li>
+<li><a href="urunler.html">Ürünler</a></li>
+<li><a href="#contact">İletişim</a></li>
+
+</ul>
+
+</div>
+
+
+<div class="footer-col">
+
+<h4>İletişim</h4>
+
+<ul>
+
+<li><i class="fas fa-phone"></i> 0538 709 82 53</li>
+<li><i class="fas fa-envelope"></i> iletisim@solissuaritma.com</li>
+<li><i class="fas fa-map-marker-alt"></i> Türkiye</li>
+
+</ul>
+
+</div>
+
+
+<div class="footer-col">
+
+<h4>Bizi Takip Edin</h4>
+
+<div class="footer-social">
+
+<a href="https://www.instagram.com/solissuaritma/" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://wa.me/905387098253" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<p>© 2026 Solis Su Arıtma • Tüm hakları saklıdır</p>
+
+</div>
+
+</div>
+
+</footer>
+    
 
     <a href="https://wa.me/905387098253" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <script>
