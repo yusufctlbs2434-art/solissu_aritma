@@ -948,24 +948,58 @@ nav .nav-container {
         display: flex !important;
     }
 }
-/* --- HARİTA VE FOOTER TASARIMI --- */
-.map-container {
-    width: 100%;
-    height: 450px;
+/* --- PREMIUM HARİTA TASARIMI --- */
+.map-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #001c3d 0%, #002d5b 100%); /* Derin lacivert arka plan */
     position: relative;
-    border-top: 5px solid var(--gold);
-    line-height: 0;
+    border-top: 2px solid rgba(212, 175, 55, 0.1); /* Çok ince altın şerit */
 }
 
-.map-container iframe {
-    width: 100% !important;
-    height: 100% !important;
-    filter: grayscale(100%) invert(5%) contrast(95%);
+.map-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    border: 1px solid rgba(212, 175, 55, 0.3); /* Altın çerçeve */
+    position: relative;
+    transition: 0.5s ease;
+}
+
+.map-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    border-color: var(--gold);
+}
+
+.map-card iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(100%) invert(90%) contrast(90%); /* Elit koyu tema filtresi */
     transition: 0.6s ease;
 }
 
-.map-container:hover iframe {
+/* Fareyle üzerine gelince harita renklenir (Opsiyonel, premium etki için) */
+.map-card:hover iframe {
     filter: grayscale(0%) invert(0%) contrast(100%);
+}
+
+.map-label {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: var(--gold);
+    color: var(--solis-dark);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    pointer-events: none; /* Tıklamayı engelle */
 }
     </style>
 </head>
@@ -1308,14 +1342,19 @@ Gerçek kullanıcı deneyimlerinden bazıları
 </section>
 
 </section>
-<section class="map-container">
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.488082229797!2d27.974769611963957!3d40.353700759353444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b5d3a67f1fd13d%3A0x6ecddc70a050f005!2zxLBoc2FuaXllLCBLdXJ0dWx1xZ8gQ2QuIE5vOjM5IEQ6YSwgMTAyMDAgQmFuZMSxcm1hL0JhbMSxa2VzaXI!5e0!3m2!1str!2str!4v1774511220820!5m2!1str!2str" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+<section class="map-section">
+    <div class="container">
+        <div class="map-card">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.651761405165!2d28.8184561!3d40.9891469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa3705021575f%3A0x6734e7f3408f976!2zU29saXMgU3UgQXLEsXRtYQ!5e0!3m2!1str!2str!4v1710000000000" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+            <div class="map-label">
+                <i class="fas fa-map-marker-alt"></i> MERKEZ OFİSİMİZ
+            </div>
+        </div>
+    </div>
 </section>
 
     <footer id="contact" class="footer">
