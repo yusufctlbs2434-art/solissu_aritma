@@ -948,6 +948,60 @@ nav .nav-container {
         display: flex !important;
     }
 }
+/* FOOTER YATAY DÜZEN (MAP İÇİN) */
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* SOL TARAF (YAZILAR) */
+.footer-left {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    flex: 2;
+}
+
+/* SAĞ TARAF (MAP) */
+.footer-right {
+    flex: 1;
+}
+
+/* YAZILAR SOLA */
+.footer-col {
+    text-align: left;
+}
+
+/* MAP TASARIM */
+.footer-map {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+}
+
+.footer-map iframe {
+    width: 100%;
+    height: 260px;
+    border: 0;
+}
+
+/* MOBİL */
+@media(max-width: 992px){
+    .footer-grid {
+        flex-direction: column;
+    }
+
+    .footer-left {
+        justify-content: center;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+}
     </style>
 </head>
 <body>
@@ -1289,86 +1343,62 @@ Gerçek kullanıcı deneyimlerinden bazıları
 </section>
 
 </section>
-
-    <footer id="contact" class="footer">
-
-<div class="container">
-
 <div class="footer-grid">
 
-<div class="footer-col">
+    <!-- SOL TARAF -->
+    <div class="footer-left">
 
-<h3>Solis Su Arıtma</h3>
+        <div class="footer-col">
+            <h3>Solis Su Arıtma</h3>
+            <p>
+            Solis Su Arıtma teknolojileri ile sağlıklı içme suyuna kolayca ulaşın.
+            Türkiye genelinde profesyonel kurulum ve servis hizmeti sunuyoruz.
+            </p>
+        </div>
 
-<p>
-Solis Su Arıtma teknolojileri ile sağlıklı içme suyuna kolayca ulaşın.
-Türkiye genelinde profesyonel kurulum ve servis hizmeti sunuyoruz.
-</p>
+        <div class="footer-col">
+            <h4>Hızlı Menü</h4>
+            <ul>
+                <li><a href="index.html">Anasayfa</a></li>
+                <li><a href="#about">Kurumsal</a></li>
+                <li><a href="urunler.html">Ürünler</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </div>
 
-</div>
+        <div class="footer-col">
+            <h4>İletişim</h4>
+            <ul>
+                <li><i class="fas fa-phone"></i> 0538 709 82 53</li>
+                <li><i class="fas fa-envelope"></i> iletisim@solissuaritma.com</li>
+                <li><i class="fas fa-map-marker-alt"></i> Türkiye</li>
+            </ul>
+        </div>
 
+        <div class="footer-col">
+            <h4>Bizi Takip Edin</h4>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/solissuaritma/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/905387098253" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
 
-<div class="footer-col">
+    </div>
 
-<h4>Hızlı Menü</h4>
-
-<ul>
-
-<li><a href="index.html">Anasayfa</a></li>
-<li><a href="#about">Kurumsal</a></li>
-<li><a href="urunler.html">Ürünler</a></li>
-<li><a href="#contact">İletişim</a></li>
-
-</ul>
-
-</div>
-
-
-<div class="footer-col">
-
-<h4>İletişim</h4>
-
-<ul>
-
-<li><i class="fas fa-phone"></i> 0538 709 82 53</li>
-<li><i class="fas fa-envelope"></i> iletisim@solissuaritma.com</li>
-<li><i class="fas fa-map-marker-alt"></i> Türkiye</li>
-
-</ul>
-
-</div>
-
-
-<div class="footer-col">
-
-<h4>Bizi Takip Edin</h4>
-
-<div class="footer-social">
-
-<a href="https://www.instagram.com/solissuaritma/" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
-
-<a href="https://wa.me/905387098253" target="_blank">
-<i class="fab fa-whatsapp"></i>
-</a>
+    <!-- SAĞ TARAF (MAP) -->
+    <div class="footer-right">
+        <div class="footer-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.488266555726!2d27.974769612117186!3d40.353696671330745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b5d3a67f1fd13d%3A0x6ecddc70a050f005!2zxLBoc2FuaXllLCBLdXJ0dWx1xZ8gQ2QuIE5vOjM5IEQ6YSwgMTAyMDAgQmFuZMSxcm1hL0JhbMSxa2VzaXI!5e0!3m2!1str!2str!4v1774529870861!5m2!1str!2str"
+            loading="lazy">
+            </iframe>
+        </div>
+    </div>
 
 </div>
-
-</div>
-
-</div>
-
-
-<div class="footer-bottom">
-
-<p>© 2026 Solis Su Arıtma • Tüm hakları saklıdır</p>
-
-</div>
-
-</div>
-
-</footer>
     
 
     <a href="https://wa.me/905387098253" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
