@@ -599,7 +599,7 @@ background:radial-gradient(circle at 20% 30%,rgba(255,255,255,0.08),transparent 
 radial-gradient(circle at 80% 70%,rgba(255,255,255,0.06),transparent 40%);
 pointer-events:none;
 }
-.footer-grid{
+/*.footer-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:50px;
@@ -607,7 +607,7 @@ margin-bottom:50px;
 position:relative;
 z-index:2;
 }
-
+*/
 .footer-col h3{
 font-family:'Montserrat';
 margin-bottom:15px;
@@ -1013,6 +1013,52 @@ nav .nav-container {
         text-align: center;
     }
 }
+/* ===== FORCE FOOTER FIX ===== */
+
+.footer .footer-grid{
+    display: grid !important;
+    grid-template-columns: 2fr 1.2fr !important;
+    gap: 60px !important;
+}
+
+.footer-left{
+    display: grid !important;
+    grid-template-columns: repeat(2,1fr) !important;
+    gap: 40px !important;
+}
+
+.footer-map{
+    background: rgba(255,255,255,0.08) !important;
+    padding: 12px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4) !important;
+}
+
+.footer-map iframe{
+    width: 100% !important;
+    height: 300px !important;
+    border-radius: 12px !important;
+}
+
+.footer-col{
+    text-align: left !important;
+}
+
+/* MOBİL */
+@media(max-width:992px){
+    .footer .footer-grid{
+        grid-template-columns: 1fr !important;
+    }
+
+    .footer-left{
+        grid-template-columns: 1fr !important;
+        text-align:center !important;
+    }
+
+    .footer-col{
+        text-align:center !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -1344,7 +1390,7 @@ Gerçek kullanıcı deneyimlerinden bazıları
 <div class="testimonial-card">
 <div class="stars">★★★★★</div>
 <p>“Daha önce başka marka kullanıyorduk. Solis'e geçtikten sonra suyun tadı gerçekten daha iyi geldi.”</p>
-<span>—  / İstanbul</span>
+<span>—  Fatma Y. / İstanbul</span>
 </div>
 
 </div>
