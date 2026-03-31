@@ -948,6 +948,45 @@ nav .nav-container {
         display: flex !important;
     }
 }
+/* ===== FOOTER HARİTA TASARIM ===== */
+
+.footer-wrapper{
+display:flex;
+gap:50px;
+justify-content:space-between;
+align-items:flex-start;
+}
+
+.footer-left{
+flex:2;
+}
+
+.footer-map{
+flex:1;
+height:320px;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
+position:relative;
+}
+
+/* iframe tam otursun */
+.footer-map iframe{
+width:100%;
+height:100%;
+}
+
+/* mobil uyum */
+@media(max-width:992px){
+.footer-wrapper{
+flex-direction:column;
+}
+
+.footer-map{
+height:250px;
+margin-top:20px;
+}
+}
     </style>
 </head>
 <body>
@@ -1294,7 +1333,12 @@ Gerçek kullanıcı deneyimlerinden bazıları
 
 <div class="container">
 
-<div class="footer-grid">
+    <div class="footer-wrapper">
+
+        <!-- SOL TARAF -->
+        <div class="footer-left">
+
+            <div class="footer-grid">
 
 <div class="footer-col">
 
@@ -1369,6 +1413,25 @@ Türkiye genelinde profesyonel kurulum ve servis hizmeti sunuyoruz.
 </div>
 
 </div>
+</div> <!-- footer-grid -->
+
+</div> <!-- footer-left -->
+
+<!-- SAĞ HARİTA -->
+<div class="footer-map">
+
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.488082229797!2d27.974769611963957!3d40.353700759353444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b5d3a67f1fd13d%3A0x6ecddc70a050f005!2zxLBoc2FuaXllLCBLdXJ0dWx1xZ8gQ2QuIE5vOjM5IEQ6YSwgMTAyMDAgQmFuZMSxcm1hL0JhbMSxa2VzaXI!5e0!3m2!1str!2str!4v1774952682509!5m2!1str!2str"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+
+</div>
+
+</div> <!-- footer-wrapper -->
+
+<div class="footer-bottom">
 
 </footer>
     
