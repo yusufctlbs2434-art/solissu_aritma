@@ -485,6 +485,41 @@ nav {
 .page-hero div {
     width: 100%;
 }
+
+.footer-wrapper{
+display:flex;
+gap:50px;
+justify-content:space-between;
+align-items:flex-start;
+}
+
+.footer-left{
+flex:2;
+}
+
+.footer-map{
+flex:1;
+height:320px;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
+}
+
+.footer-map iframe{
+width:100%;
+height:100%;
+}
+
+@media(max-width:992px){
+.footer-wrapper{
+flex-direction:column;
+}
+
+.footer-map{
+height:250px;
+margin-top:20px;
+}
+}
     </style>
 </head>
 <body>
@@ -632,7 +667,10 @@ nav {
 
 <div class="container">
 
-<div class="footer-grid">
+<div class="footer-wrapper">
+
+    <div class="footer-left">
+        <div class="footer-grid">
 
 <div class="footer-col">
 
@@ -702,6 +740,18 @@ Türkiye genelinde profesyonel kurulum ve servis hizmeti sunuyoruz.
 </div>
 
 </div>
+</div> <!-- footer-grid -->
+</div> <!-- footer-left -->
+
+<div class="footer-map">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=..."
+        style="border:0;"
+        loading="lazy">
+    </iframe>
+</div>
+
+</div> <!-- footer-wrapper -->
 
 </footer>
 <script>
